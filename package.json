@@ -4,23 +4,28 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "fmt": "prettier --write ."
+    "serve": "vite preview"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.2",
     "@vue/compiler-sfc": "^3.0.11",
+    "conventional-changelog-cli": "^2.1.1",
     "execa": "^5.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
+    "prompts": "^2.4.1",
+    "semver": "^7.3.5",
     "vite": "^2.3.4",
     "vite-plugin-windicss": "^0.16.0",
     "vue": "^3.0.11",
-    "windicss": "^3.0.12"
+    "windicss": "^3.0.12",
+    "yorkie": "^2.0.0"
   },
-  "description": "An Online Python Playground",
+  "description": "The Unofficial Python Playground",
   "keywords": [
     "python",
-    "playground"
+    "playground",
+    "repl"
   ],
   "author": "Jeff Yang",
   "license": "MIT",
@@ -30,5 +35,16 @@
     "singleQuote": true,
     "printWidth": 80,
     "trailingComma": "none"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }

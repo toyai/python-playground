@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
-import execa from "execa"
+import execa from 'execa'
 
 const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout
 
