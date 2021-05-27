@@ -1,0 +1,34 @@
+{
+  "name": "python-playground",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "fmt": "prettier --write ."
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/compiler-sfc": "^3.0.11",
+    "execa": "^5.0.0",
+    "prettier": "^2.3.0",
+    "vite": "^2.3.4",
+    "vite-plugin-windicss": "^0.16.0",
+    "vue": "^3.0.11",
+    "windicss": "^3.0.12"
+  },
+  "description": "An Online Python Playground",
+  "keywords": [
+    "python",
+    "playground"
+  ],
+  "author": "Jeff Yang",
+  "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "printWidth": 80,
+    "trailingComma": "none"
+  }
+}
