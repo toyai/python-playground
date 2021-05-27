@@ -1,7 +1,9 @@
-<template>hello</template>
+<template>
+  <CodeMirror />
+</template>
 
-<script>
-export default {}
+<script setup>
+import CodeMirror from './codemirror/CodeMirror.vue'
 </script>
 
 <style></style>
