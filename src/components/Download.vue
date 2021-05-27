@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="download"
-    class="focus:outline-none mx-2 inline-flex items-center content-center"
+    class="focus:outline-none mx-1 inline-flex items-center content-center"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

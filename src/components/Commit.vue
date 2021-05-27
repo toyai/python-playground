@@ -3,7 +3,7 @@
     href="https://github.com/"
     target="_blank"
     rel="noopener noreferrer"
-    class="mx-2"
+    class="mx-1"
   >
     v{{ version }}@{{ currentCommit }}
   </a>

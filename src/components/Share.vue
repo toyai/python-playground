@@ -1,6 +1,6 @@
 <template>
   <button
-    class="focus:outline-none mx-2 inline-flex items-center content-center"
+    class="focus:outline-none mx-1 inline-flex items-center content-center"
     @click.prevent="share"
   >
     <svg

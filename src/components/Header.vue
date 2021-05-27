@@ -2,7 +2,7 @@
   <header class="flex items-center justify-between px-4 py-2 border-b h-14">
     <div>
       <img
-        class="w-30px h-30px inline-block mx-2"
+        class="w-30px h-30px inline-block mr-2"
         src="../assets/logo.svg"
         alt="Python Logo"
         srcset=""
