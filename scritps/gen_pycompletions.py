@@ -3,7 +3,7 @@ import inspect
 import keyword
 import json
 
-PYTHON_JSON_PATH = './src/components/codemirror/python.json'
+PYTHON_JSON_FILE = './src/components/codemirror/python.json'
 
 
 def get_builtins(check):
@@ -15,7 +15,7 @@ def get_builtins(check):
   return names
 
 
-with open(PYTHON_JSON_PATH, 'w') as f:
+with open(PYTHON_JSON_FILE, 'w') as f:
   py_builtins = {
       'keywords': sorted(keyword.kwlist),
       'builtInFunctions': get_builtins(inspect.isbuiltin),

@@ -20,7 +20,7 @@ import { rectangularSelection } from '@codemirror/rectangular-selection'
 import { defaultHighlightStyle } from '@codemirror/highlight'
 import { lintKeymap } from '@codemirror/lint'
 import { python } from '@codemirror/lang-python'
-import pythonBuiltIns from './completions.js'
+import pythonBuiltIns from './python.js'
 
 /**
  * @type {import('@codemirror/state').Extension}
