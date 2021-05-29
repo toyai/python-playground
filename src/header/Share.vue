@@ -1,7 +1,8 @@
 <template>
   <button
     class="focus:outline-none mx-1 inline-flex items-center content-center"
-    @click.prevent="share"
+    @click.prevent="shareURL"
+    title="Share main.py"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,18 +24,13 @@
   </button>
 </template>
 
-<script>
-export default {
-  setup() {
-    const share = async () => {
-      try {
-        await navigator.clipboard.writeText(location.href)
-        alert('Shareable URL has been copied to the clipboard.')
-      } catch (e) {
-        console.error(e)
-      }
-    }
-    return { share }
+<script setup>
+const shareURL = async () => {
+  try {
+    await navigator.clipboard.writeText(location.href)
+    alert('Shareable URL has been copied to the clipboard.')
+  } catch (e) {
+    console.error(e)
   }
 }
 </script>

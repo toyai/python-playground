@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import CodeMirror from './codemirror/CodeMirror.vue'
+import CodeMirror from '../codemirror/CodeMirror.vue'
 </script>
 
 <style></style>

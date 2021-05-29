@@ -1,7 +1,8 @@
 <template>
   <button
-    @click.prevent="download"
+    @click.prevent="downloadFile"
     class="focus:outline-none mx-1 inline-flex items-center content-center"
+    title="Download main.py"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +31,11 @@
 <script>
 export default {
   setup() {
-    const download = () => {
+    const downloadFile = () => {
       alert('download trigger')
     }
 
-    return { download }
+    return { downloadFile }
   }
 }
 </script>

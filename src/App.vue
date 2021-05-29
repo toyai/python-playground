@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import Header from './components/Header.vue'
-import PaneSplit from './components/PaneSplit.vue'
-import PaneLeft from './components/PaneLeft.vue'
-import PaneRight from './components/PaneRight.vue'
+import Header from './header/Header.vue'
+import PaneSplit from './panes/PaneSplit.vue'
+import PaneLeft from './panes/PaneLeft.vue'
+import PaneRight from './panes/PaneRight.vue'
 </script>

@@ -1,22 +1,16 @@
 <template>
   <a
-    href="https://github.com/"
+    :href="`https://github.com/toyai/python-playground/commit/${currentCommit}`"
     target="_blank"
     rel="noopener noreferrer"
     class="mx-1"
+    title="Current Playground Version"
   >
     v{{ version }}@{{ currentCommit }}
   </a>
 </template>
 
-<script>
+<script setup>
 import { version } from '../../package.json'
-
-export default {
-  setup() {
-    const currentCommit = __COMMIT__.slice(0, 7)
-
-    return { version, currentCommit }
-  }
-}
+const currentCommit = __COMMIT__.slice(0, 7)
 </script>
