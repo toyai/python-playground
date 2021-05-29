@@ -8,9 +8,9 @@ import {
 import { EditorState } from '@codemirror/state'
 import { history, historyKeymap } from '@codemirror/history'
 import { foldGutter, foldKeymap } from '@codemirror/fold'
-import { indentOnInput, indentUnit } from '@codemirror/language'
+import { indentOnInput } from '@codemirror/language'
 import { lineNumbers, highlightActiveLineGutter } from '@codemirror/gutter'
-import { defaultKeymap, indentLess, indentMore } from '@codemirror/commands'
+import { defaultKeymap, defaultTabBinding } from '@codemirror/commands'
 import { bracketMatching } from '@codemirror/matchbrackets'
 import { closeBrackets, closeBracketsKeymap } from '@codemirror/closebrackets'
 import { searchKeymap, highlightSelectionMatches } from '@codemirror/search'
@@ -19,22 +19,13 @@ import { commentKeymap } from '@codemirror/comment'
 import { rectangularSelection } from '@codemirror/rectangular-selection'
 import { defaultHighlightStyle } from '@codemirror/highlight'
 import { lintKeymap } from '@codemirror/lint'
-import { python, pythonLanguage } from '@codemirror/lang-python'
-
-// `defaultTabBinding` from CodeMirror uses 1 tab for a indent
-// while we want 4 spaces so we map a custom key with
-// `indentMore` - 4 spaces indent to the right and
-// `indentLess` - 4 spaces indent to the left
-const tabToSpacesKeymap = [
-  { key: 'Tab', run: indentMore },
-  { key: 'Shift-Tab', run: indentLess }
-]
+import { python } from '@codemirror/lang-python'
+import pythonBuiltIns from './completions.js'
 
 /**
  * @type {import('@codemirror/state').Extension}
  */
 export const extensions = [
-  // sort them by their name width
   python(),
   history(),
   foldGutter(),
@@ -42,26 +33,27 @@ export const extensions = [
   drawSelection(),
   indentOnInput(),
   closeBrackets(),
-  autocompletion(),
+  autocompletion({
+    override: pythonBuiltIns
+  }),
   bracketMatching(),
-  indentUnit.of('    '),
   highlightActiveLine(),
   rectangularSelection(),
   highlightSpecialChars(),
   highlightActiveLineGutter(),
   highlightSelectionMatches(),
-  defaultHighlightStyle.fallback,
+  defaultHighlightStyle,
+  EditorState.tabSize.of(2),
   EditorState.allowMultipleSelections.of(true),
-  // sort them by their name width
   keymap.of([
-    ...lintKeymap,
-    ...foldKeymap,
-    ...searchKeymap,
+    ...closeBracketsKeymap,
     ...commentKeymap,
-    ...defaultKeymap,
-    ...historyKeymap,
     ...completionKeymap,
-    ...tabToSpacesKeymap,
-    ...closeBracketsKeymap
+    ...defaultKeymap,
+    ...foldKeymap,
+    ...historyKeymap,
+    ...lintKeymap,
+    ...searchKeymap,
+    defaultTabBinding
   ])
 ]
