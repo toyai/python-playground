@@ -16,8 +16,6 @@ specifiers:
   '@codemirror/rectangular-selection': ^0.18.0
   '@codemirror/search': ^0.18.4
   '@codemirror/state': ^0.18.7
-  '@codemirror/text': ^0.18.0
-  '@codemirror/theme-one-dark': ^0.18.1
   '@codemirror/view': ^0.18.13
   '@vitejs/plugin-vue': ^1.2.2
   '@vue/compiler-sfc': ^3.0.11
@@ -49,8 +47,6 @@ devDependencies:
   '@codemirror/rectangular-selection': 0.18.0
   '@codemirror/search': 0.18.4
   '@codemirror/state': 0.18.7
-  '@codemirror/text': 0.18.0
-  '@codemirror/theme-one-dark': 0.18.1
   '@codemirror/view': 0.18.13
   '@vitejs/plugin-vue': 1.2.2_@vue+compiler-sfc@3.0.11
   '@vue/compiler-sfc': 3.0.11_vue@3.0.11
@@ -327,17 +323,6 @@ packages:
       {
         integrity: sha512-HMzHNIAbjCiCf3tEJMRg6ul01KPuXxQGNiHlHgAnqPguq/CX+L4Nvj5JlWQAI91Pupk18zhmM1c6eaazX4YeTg==
       }
-    dev: true
-
-  /@codemirror/theme-one-dark/0.18.1:
-    resolution:
-      {
-        integrity: sha512-0XRfWYDfwUlPlN8yrO7bDB+EuHFqUNhTJwgp2iIixZWejuZQK0NxKmjuhkiGsEz25w7toM12uUsNJ5mo7iFQcA==
-      }
-    dependencies:
-      '@codemirror/highlight': 0.18.4
-      '@codemirror/state': 0.18.7
-      '@codemirror/view': 0.18.13
     dev: true
 
   /@codemirror/tooltip/0.18.4:
