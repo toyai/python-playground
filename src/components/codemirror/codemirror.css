@@ -3,8 +3,8 @@
 }
 .cm-editor {
   height: 100%;
+  font-size: 0.875rem;
 }
 .ͼ1 .cm-scroller {
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 0.875rem;
 }

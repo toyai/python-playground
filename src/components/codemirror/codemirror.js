@@ -5,12 +5,12 @@ import {
   drawSelection,
   highlightActiveLine
 } from '@codemirror/view'
-import { EditorState } from '@codemirror/state'
+import { EditorState, Transaction } from '@codemirror/state'
 import { history, historyKeymap } from '@codemirror/history'
 import { foldGutter, foldKeymap } from '@codemirror/fold'
-import { indentOnInput } from '@codemirror/language'
+import { indentOnInput, indentUnit } from '@codemirror/language'
 import { lineNumbers, highlightActiveLineGutter } from '@codemirror/gutter'
-import { defaultKeymap, defaultTabBinding } from '@codemirror/commands'
+import { defaultKeymap, indentLess, indentMore } from '@codemirror/commands'
 import { bracketMatching } from '@codemirror/matchbrackets'
 import { closeBrackets, closeBracketsKeymap } from '@codemirror/closebrackets'
 import { searchKeymap, highlightSelectionMatches } from '@codemirror/search'
@@ -22,6 +22,22 @@ import { lintKeymap } from '@codemirror/lint'
 import { python } from '@codemirror/lang-python'
 import pythonBuiltIns from './python.js'
 
+const fourSpaces = '    '
+
+// copied from `insertTab`, changed \t with 4 spaces
+const insertFourSpaces = ({ state, dispatch }) => {
+  if (state.selection.ranges.some((r) => !r.empty))
+    return indentMore({ state, dispatch })
+  dispatch(
+    state.update(state.replaceSelection(fourSpaces), {
+      scrollIntoView: true,
+      annotations: Transaction.userEvent.of('input')
+    })
+  )
+  return true
+}
+
+const tabBinding = { key: 'Tab', run: insertFourSpaces, shift: indentLess }
 /**
  * @type {import('@codemirror/state').Extension}
  */
@@ -37,13 +53,13 @@ export const extensions = [
     override: pythonBuiltIns
   }),
   bracketMatching(),
+  indentUnit.of(fourSpaces),
   highlightActiveLine(),
   rectangularSelection(),
   highlightSpecialChars(),
   highlightActiveLineGutter(),
   highlightSelectionMatches(),
   defaultHighlightStyle,
-  EditorState.tabSize.of(2),
   EditorState.allowMultipleSelections.of(true),
   keymap.of([
     ...closeBracketsKeymap,
@@ -54,6 +70,6 @@ export const extensions = [
     ...historyKeymap,
     ...lintKeymap,
     ...searchKeymap,
-    defaultTabBinding
+    tabBinding
   ])
 ]
