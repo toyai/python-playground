@@ -1,9 +1,10 @@
 <template>
   <a
-    href="https://github.com"
+    href="https://github.com/toyai/python-playground"
     target="_blank"
     rel="noopener noreferrer"
     class="focus:outline-none mx-1 inline-flex items-center content-center"
+    title="See the source on GitHub"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,3 @@
     <span class="sr-only">GitHub</span>
   </a>
 </template>
-
-<script>
-export default {}
-</script>
