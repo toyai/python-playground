@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased font-sans text-blue-gray-600 bg-white">
+  <div class="antialiased font-sans text-blue-gray-600 bg-white text-base">
     <Header />
     <PaneSplit>
       <template #left>

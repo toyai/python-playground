@@ -66,7 +66,7 @@ export default {
 }
 </script>
 
-<style scoped lang="postcss">
+<style scoped>
 .split-panes {
   height: calc(100vh - 3.5rem);
 }
