@@ -1,3 +1,4 @@
+// @ts-check
 import {
   snippetCompletion,
   completeFromList,
@@ -17,7 +18,7 @@ function makeCompletions(builtins, type, boost, info) {
   const completions = []
   for (const k in builtins) {
     completions.push(
-      snippetCompletion(k, {
+      snippetCompletion(Array.isArray(builtins) ? builtins[k] : k, {
         label: Array.isArray(builtins) ? builtins[k] : k,
         type: type,
         info: info ? builtins[k] : '',

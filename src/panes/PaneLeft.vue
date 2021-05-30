@@ -1,9 +1,20 @@
 <template>
-  <CodeMirror />
+  <CodeMirror @change="onChange" :code="code" />
 </template>
 
-<script setup>
+<script>
 import CodeMirror from '../codemirror/CodeMirror.vue'
-</script>
+import { store } from '../store.js'
 
-<style></style>
+export default {
+  components: { CodeMirror },
+  setup() {
+    const onChange = (updatedCode) => {
+      store.code = updatedCode
+    }
+    const code = store.code
+
+    return { onChange, code }
+  }
+}
+</script>

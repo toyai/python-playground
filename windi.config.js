@@ -1,4 +1,4 @@
-//@ts-check
+// @ts-check
 import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
