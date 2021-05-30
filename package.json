@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "python scripts/gen_pycompletions.py && vite build",
     "serve": "vite preview",
     "fmt": "prettier --write .",
     "release": "node scripts/release.js",
