@@ -4,3 +4,4 @@ dist
 dist-ssr
 *.local
 .vscode
+.pnpm-debug.log
