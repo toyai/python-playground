@@ -16,7 +16,7 @@ def stdoutIO(stdout=None):
     sys.stdout = old
 
 
-@route.put('/')
+@route.post('/')
 def index(source: str):
     with stdoutIO() as s:
         try:
