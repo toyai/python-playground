@@ -3,7 +3,7 @@ import inspect
 import keyword
 import json
 
-PYTHON_JSON_FILE = './src/components/codemirror/python.json'
+PYTHON_JSON_FILE = './src/codemirror/python.json'
 
 
 def get_builtins(check):
