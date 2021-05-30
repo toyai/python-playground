@@ -1,7 +1,7 @@
 import sys
 from io import StringIO
 import contextlib
-from fastapi import APIRouter, Body
+from fastapi import APIRouter
 
 
 route = APIRouter()

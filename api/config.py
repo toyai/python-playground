@@ -1,4 +1,3 @@
-import os
 from functools import lru_cache
 from typing import List
 
@@ -26,4 +25,3 @@ def get_settings():
 
 
 settings = get_settings()
-
