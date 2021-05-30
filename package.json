@@ -40,7 +40,7 @@
     "windicss": "^3.0.12",
     "yorkie": "^2.0.0"
   },
-  "description": "The Unofficial Python Playground",
+  "description": "The Python Playground",
   "keywords": [
     "python",
     "playground",
