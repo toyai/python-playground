@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
-from config import settings, Settings
-from routes import route as api_router
+from api.config import settings, Settings
+from api.routes import route as api_router
 
 
 def get_application(settings: Settings = settings) -> FastAPI:
