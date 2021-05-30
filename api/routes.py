@@ -1,10 +1,11 @@
+import contextlib
 import sys
 from io import StringIO
-import contextlib
+
 from fastapi import APIRouter
 
-
 route = APIRouter()
+
 
 @contextlib.contextmanager
 def stdoutIO(stdout=None):
@@ -16,7 +17,7 @@ def stdoutIO(stdout=None):
     sys.stdout = old
 
 
-@route.post('/')
+@route.post("/")
 def index(source: str):
     with stdoutIO() as s:
         try:

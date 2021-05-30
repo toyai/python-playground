@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.pnpm-store
+            ~/.cache/pip
+          key: pnpm-n-pip-cache-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-n-pip-cache-${{ hashFiles('pnpm-lock.yaml') }}
+            pnpm-n-pip-cache-
+
+      - name: Setup
+        run: |
+          pip install wheel setuptools pip -U
+          npm i -g pnpm
+          pnpm setup:ci
+
+      - run: pnpm lint
