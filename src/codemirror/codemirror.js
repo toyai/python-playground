@@ -44,8 +44,8 @@ const tabBinding = { key: 'Tab', run: insertFourSpaces, shift: indentLess }
 export const extensions = [
   python(),
   history(),
-  foldGutter(),
   lineNumbers(),
+  foldGutter(),
   drawSelection(),
   indentOnInput(),
   closeBrackets(),
