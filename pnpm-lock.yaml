@@ -11,9 +11,7 @@ specifiers:
   '@codemirror/history': ^0.18.1
   '@codemirror/lang-python': ^0.18.0
   '@codemirror/language': ^0.18.1
-  '@codemirror/lint': ^0.18.3
   '@codemirror/matchbrackets': ^0.18.0
-  '@codemirror/rectangular-selection': ^0.18.0
   '@codemirror/search': ^0.18.4
   '@codemirror/state': ^0.18.7
   '@codemirror/view': ^0.18.13
@@ -42,9 +40,7 @@ devDependencies:
   '@codemirror/history': 0.18.1
   '@codemirror/lang-python': 0.18.0
   '@codemirror/language': 0.18.1
-  '@codemirror/lint': 0.18.3
   '@codemirror/matchbrackets': 0.18.0
-  '@codemirror/rectangular-selection': 0.18.0
   '@codemirror/search': 0.18.4
   '@codemirror/state': 0.18.7
   '@codemirror/view': 0.18.13
@@ -240,19 +236,6 @@ packages:
       lezer-tree: 0.13.2
     dev: true
 
-  /@codemirror/lint/0.18.3:
-    resolution:
-      {
-        integrity: sha512-ORD8bGQRv5FATJ/LUmhaVPz69ucNjMCQ53WF8TqYMw6KtlTwAFsi+GvEhYyav7CdXPAXS/Z/j0C0Op8d1Dp+lQ==
-      }
-    dependencies:
-      '@codemirror/panel': 0.18.2
-      '@codemirror/state': 0.18.7
-      '@codemirror/tooltip': 0.18.4
-      '@codemirror/view': 0.18.13
-      crelt: 1.0.5
-    dev: true
-
   /@codemirror/matchbrackets/0.18.0:
     resolution:
       {
@@ -282,17 +265,6 @@ packages:
       }
     dependencies:
       '@codemirror/state': 0.18.7
-    dev: true
-
-  /@codemirror/rectangular-selection/0.18.0:
-    resolution:
-      {
-        integrity: sha512-BQ4pp2zhXCVZNqct5LtLR3AOWVseENBF/3oOgBmwsCKH7c11NfTqIqgWG5EW8NLOXp8HP8cDm3np8eWez0VkGQ==
-      }
-    dependencies:
-      '@codemirror/state': 0.18.7
-      '@codemirror/text': 0.18.0
-      '@codemirror/view': 0.18.13
     dev: true
 
   /@codemirror/search/0.18.4:
