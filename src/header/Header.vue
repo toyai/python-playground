@@ -13,8 +13,8 @@
     </div>
     <div class="inline-flex items-center content-center">
       <Commit />
-      <EditOnPlayground />
       <Download />
+      <EditOnPlayground />
       <EmbedCode />
       <Share />
       <GitHub />
