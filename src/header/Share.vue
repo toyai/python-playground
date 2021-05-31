@@ -2,7 +2,7 @@
   <button
     class="focus:outline-none mx-1 inline-flex items-center content-center"
     @click.prevent="shareURL"
-    title="Share main.py"
+    title="Share the code"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -2,7 +2,7 @@
   <button
     @click.prevent="downloadFile"
     class="focus:outline-none mx-1 inline-flex items-center content-center"
-    title="Download main.py"
+    title="Download the code"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
