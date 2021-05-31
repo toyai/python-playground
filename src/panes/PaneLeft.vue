@@ -10,9 +10,9 @@ export default {
   components: { CodeMirror },
   setup() {
     const onChange = (updatedCode) => {
-      store.code = updatedCode
+      store.files['main.py'] = updatedCode
     }
-    const code = store.code
+    const code = store.files['main.py']
 
     return { onChange, code }
   }

@@ -1,10 +1,6 @@
 // @ts-check
 import { reactive, watchEffect } from 'vue'
 
-export const store = reactive({
-  code: `print('Hello World!')`
-})
-
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa#unicode_strings
 // convert a Unicode string to a string in which
 // each 16-bit unit occupies only one byte
@@ -34,11 +30,25 @@ function fromBinary(binary) {
   return String.fromCharCode(...new Uint16Array(bytes.buffer))
 }
 
-const savedCode = location.hash.slice(1)
-if (savedCode) {
-  store.code = fromBinary(atob(savedCode))
+const files = {}
+const urlHash = location.hash.slice(1)
+if (urlHash) {
+  const savedFiles = JSON.parse(fromBinary(atob(urlHash)))
+  for (const filename in savedFiles) {
+    files[filename] = savedFiles[filename]
+  }
+} else {
+  files['main.py'] = `print('Hello World!')\n`
 }
 
+export const store = reactive({
+  files: files
+})
+
 watchEffect(() =>
-  history.replaceState(null, '', '#' + btoa(toBinary(store.code)))
+  history.replaceState(
+    null,
+    '',
+    '#' + btoa(toBinary(JSON.stringify(store.files)))
+  )
 )
