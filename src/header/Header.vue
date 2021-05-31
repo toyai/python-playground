@@ -14,6 +14,8 @@
     <div class="inline-flex items-center content-center">
       <Commit />
       <Download />
+      <EditOnPlayground />
+      <EmbedCode />
       <Share />
       <GitHub />
     </div>
@@ -23,10 +25,12 @@
 <script>
 import Commit from './Commit.vue'
 import Download from './Download.vue'
+import EditOnPlayground from './EditOnPlayground.vue'
+import EmbedCode from './EmbedCode.vue'
 import GitHub from './GitHub.vue'
 import Share from './Share.vue'
 
 export default {
-  components: { Commit, Download, GitHub, Share }
+  components: { Commit, Download, EditOnPlayground, EmbedCode, GitHub, Share }
 }
 </script>

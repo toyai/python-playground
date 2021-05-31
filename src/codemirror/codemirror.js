@@ -16,9 +16,7 @@ import { closeBrackets, closeBracketsKeymap } from '@codemirror/closebrackets'
 import { searchKeymap, highlightSelectionMatches } from '@codemirror/search'
 import { autocompletion, completionKeymap } from '@codemirror/autocomplete'
 import { commentKeymap } from '@codemirror/comment'
-import { rectangularSelection } from '@codemirror/rectangular-selection'
 import { defaultHighlightStyle } from '@codemirror/highlight'
-import { lintKeymap } from '@codemirror/lint'
 import { python } from '@codemirror/lang-python'
 import pythonBuiltIns from './python.js'
 
@@ -42,34 +40,34 @@ const tabBinding = { key: 'Tab', run: insertFourSpaces, shift: indentLess }
  * @type {import('@codemirror/state').Extension}
  */
 export const extensions = [
-  python(),
+  // sorted by
+  // https://github.com/codemirror/basic-setup/blob/main/src/basic-setup.ts
+  lineNumbers(),
+  highlightActiveLineGutter(),
+  highlightSpecialChars(),
   history(),
   foldGutter(),
-  lineNumbers(),
   drawSelection(),
+  EditorState.allowMultipleSelections.of(true),
   indentOnInput(),
+  defaultHighlightStyle,
+  bracketMatching(),
   closeBrackets(),
   autocompletion({
     override: pythonBuiltIns
   }),
-  bracketMatching(),
-  indentUnit.of(fourSpaces),
   highlightActiveLine(),
-  rectangularSelection(),
-  highlightSpecialChars(),
-  highlightActiveLineGutter(),
   highlightSelectionMatches(),
-  defaultHighlightStyle,
-  EditorState.allowMultipleSelections.of(true),
+  python(),
+  indentUnit.of(fourSpaces),
   keymap.of([
     ...closeBracketsKeymap,
+    ...defaultKeymap,
+    ...searchKeymap,
+    ...historyKeymap,
+    ...foldKeymap,
     ...commentKeymap,
     ...completionKeymap,
-    ...defaultKeymap,
-    ...foldKeymap,
-    ...historyKeymap,
-    ...lintKeymap,
-    ...searchKeymap,
     tabBinding
   ])
 ]
