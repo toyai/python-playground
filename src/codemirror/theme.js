@@ -11,11 +11,14 @@ export const Theme = EditorView.theme({
   '&.cm-focused': {
     outline: 'none'
   },
+  '&.cm-focused .cm-cursor': {
+    borderLeftWidth: '2px'
+  },
   '.cm-scroller': {
     fontFamily: codeFont
   },
   '.cm-matchingBracket, .cm-nonmatchingBracket': {
-    outline: '1px solid #888'
+    backgroundColor: 'rgba(136, 136, 136, 0.3)'
   },
   '.cm-completionIcon': {
     paddingRight: '1rem'
