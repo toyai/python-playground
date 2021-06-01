@@ -2,9 +2,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
-import execa from 'execa'
+import { execFileSync } from 'child_process'
 
-const commit = execa.sync('git', ['rev-parse', 'HEAD']).stdout
+const commit = execFileSync('git', ['rev-parse', 'HEAD']).toString().trim()
 
 // https://vitejs.dev/config/
 export default defineConfig({
