@@ -2,13 +2,13 @@
   "name": "python-playground",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
     "build": "python scripts/gen_pycompletions.py && vite build",
-    "serve": "vite preview",
-    "release": "node scripts/release.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "dev": "vite",
     "fmt": "prettier --write . && sh scripts/run_code_style.sh fmt",
     "lint": "prettier --check . && sh scripts/run_code_style.sh lint",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release": "node scripts/release.js",
+    "serve": "vite preview",
     "setup": "pnpm i && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
     "setup:ci": "pnpm i --frozen-lockfile && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install"
   },
@@ -30,16 +30,13 @@
     "@vitejs/plugin-vue": "^1.2.2",
     "@vue/compiler-sfc": "^3.0.11",
     "conventional-changelog-cli": "^2.1.1",
-    "execa": "^5.0.0",
-    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "prompts": "^2.4.1",
     "semver": "^7.3.5",
     "vite": "^2.3.4",
     "vite-plugin-windicss": "^0.16.0",
     "vue": "^3.0.11",
-    "windicss": "^3.0.12",
-    "yorkie": "^2.0.0"
+    "windicss": "^3.0.12"
   },
   "description": "The Python Playground",
   "keywords": [
@@ -55,14 +52,6 @@
     "singleQuote": true,
     "printWidth": 80,
     "trailingComma": "none"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --write"
-    ]
   },
   "engines": {
     "node": ">=12.0.0"

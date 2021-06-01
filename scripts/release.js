@@ -3,9 +3,9 @@
 
 const fs = require('fs')
 const path = require('path')
-const execa = require('execa')
 const semver = require('semver')
 const prompts = require('prompts')
+const child_process = require('child_process')
 
 const pkgDir = process.cwd()
 const pkgPath = path.resolve(pkgDir, 'package.json')
@@ -35,10 +35,8 @@ const inc = (i) => semver.inc(currentVersion, i, preId)
 /**
  * @param {string} bin
  * @param {string[]} args
- * @param {object} opts
  */
-const run = (bin, args, opts = {}) =>
-  execa(bin, args, { stdio: 'inherit', ...opts })
+const run = (bin, args) => child_process.execFileSync(bin, args)
 
 /**
  * @param {string} msg
@@ -81,8 +79,9 @@ async function main() {
   updateVersion(targetVersion)
 
   step('\nGenerating changelog...')
-  await run('pnpm', ['run', 'changelog'])
-  await run('pnpm', ['run', 'fmt'])
+  run('pnpm', ['run', 'changelog'])
+  step('\nFormatting...')
+  run('pnpm', ['run', 'fmt'])
 
   const { yes: changelogOk } = await prompts({
     type: 'confirm',
@@ -95,13 +94,13 @@ async function main() {
   }
 
   step('\nCommitting changes...')
-  await run('git', ['add', '-A'])
-  await run('git', ['commit', '-m', `release: ${tag}`])
+  run('git', ['add', '-A'])
+  run('git', ['commit', '-m', `release: ${tag}`])
 
   step('\nPushing to GitHub...')
-  await run('git', ['tag', tag])
-  await run('git', ['push', 'origin', tag])
-  await run('git', ['push', '-u', 'origin', 'main'])
+  run('git', ['tag', tag])
+  run('git', ['push', 'origin', tag])
+  run('git', ['push', '-u', 'origin', 'main'])
 }
 
 /**
