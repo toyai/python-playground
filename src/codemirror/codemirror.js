@@ -19,6 +19,7 @@ import { commentKeymap } from '@codemirror/comment'
 import { defaultHighlightStyle } from '@codemirror/highlight'
 import { python } from '@codemirror/lang-python'
 import pythonBuiltIns from './python.js'
+import { Theme, ThemeHighlight } from './theme.js'
 
 const fourSpaces = '    '
 
@@ -50,7 +51,9 @@ export const extensions = [
   drawSelection(),
   EditorState.allowMultipleSelections.of(true),
   indentOnInput(),
-  defaultHighlightStyle,
+  Theme,
+  ThemeHighlight,
+  defaultHighlightStyle.fallback,
   bracketMatching(),
   closeBrackets(),
   autocompletion({

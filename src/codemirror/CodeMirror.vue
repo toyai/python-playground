@@ -1,9 +1,8 @@
 <template>
-  <div class="h-full w-full overflow-scroll bg-light-400" ref="el"></div>
+  <div class="h-full w-full bg-light-400" ref="el"></div>
 </template>
 
 <script>
-import './codemirror.css'
 import { extensions } from './codemirror.js'
 import { EditorState } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
