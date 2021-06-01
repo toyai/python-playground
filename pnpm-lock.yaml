@@ -14,9 +14,7 @@ specifiers:
   '@codemirror/matchbrackets': ^0.18.0
   '@codemirror/search': ^0.18.4
   '@codemirror/state': ^0.18.7
-  '@codemirror/theme-one-dark': ^0.18.1
   '@codemirror/view': ^0.18.13
-  '@primer/primitives': ^4.3.6
   '@vitejs/plugin-vue': ^1.2.2
   '@vue/compiler-sfc': ^3.0.11
   conventional-changelog-cli: ^2.1.1
@@ -45,9 +43,7 @@ devDependencies:
   '@codemirror/matchbrackets': 0.18.0
   '@codemirror/search': 0.18.4
   '@codemirror/state': 0.18.7
-  '@codemirror/theme-one-dark': 0.18.1
   '@codemirror/view': 0.18.13
-  '@primer/primitives': 4.3.6
   '@vitejs/plugin-vue': 1.2.2_@vue+compiler-sfc@3.0.11
   '@vue/compiler-sfc': 3.0.11_vue@3.0.11
   conventional-changelog-cli: 2.1.1
@@ -271,15 +267,6 @@ packages:
       '@codemirror/state': 0.18.7
     dev: true
 
-  /@codemirror/rangeset/0.18.2:
-    resolution:
-      {
-        integrity: sha512-rXXuSLlsbtHDKVx9xvP6jGOcjk4fXHZuIr9//ccKYqrCG5RRBvwzcdNTCi1H9tXzBwj5xA4nmDe8fCi6GCAzLw==
-      }
-    dependencies:
-      '@codemirror/state': 0.18.7
-    dev: true
-
   /@codemirror/search/0.18.4:
     resolution:
       {
@@ -310,17 +297,6 @@ packages:
       }
     dev: true
 
-  /@codemirror/theme-one-dark/0.18.1:
-    resolution:
-      {
-        integrity: sha512-0XRfWYDfwUlPlN8yrO7bDB+EuHFqUNhTJwgp2iIixZWejuZQK0NxKmjuhkiGsEz25w7toM12uUsNJ5mo7iFQcA==
-      }
-    dependencies:
-      '@codemirror/highlight': 0.18.4
-      '@codemirror/state': 0.18.7
-      '@codemirror/view': 0.18.14
-    dev: true
-
   /@codemirror/tooltip/0.18.4:
     resolution:
       {
@@ -338,19 +314,6 @@ packages:
       }
     dependencies:
       '@codemirror/rangeset': 0.18.1
-      '@codemirror/state': 0.18.7
-      '@codemirror/text': 0.18.0
-      style-mod: 4.0.0
-      w3c-keyname: 2.2.4
-    dev: true
-
-  /@codemirror/view/0.18.14:
-    resolution:
-      {
-        integrity: sha512-b83favt2XtbV343wzmY4e5lTwYBdpklFZ31jJ/SDGixx6Yj5xTgZd6NU6jkK/XOT40D1rcRoKcQfFbbpjLG1SA==
-      }
-    dependencies:
-      '@codemirror/rangeset': 0.18.2
       '@codemirror/state': 0.18.7
       '@codemirror/text': 0.18.0
       style-mod: 4.0.0
@@ -385,13 +348,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.4
       fastq: 1.11.0
-    dev: true
-
-  /@primer/primitives/4.3.6:
-    resolution:
-      {
-        integrity: sha512-kdbpENgaC1loyH6q9hjsG12dqgBNoZkBXDevjOdeRG+cIE6IDdYrqSEbS7eFH2yJexjPBbFilndcKmE2NW7SGA==
-      }
     dev: true
 
   /@types/minimist/1.2.1:

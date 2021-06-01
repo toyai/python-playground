@@ -16,10 +16,7 @@ import { closeBrackets, closeBracketsKeymap } from '@codemirror/closebrackets'
 import { searchKeymap, highlightSelectionMatches } from '@codemirror/search'
 import { autocompletion, completionKeymap } from '@codemirror/autocomplete'
 import { commentKeymap } from '@codemirror/comment'
-import {
-  defaultHighlightStyle,
-  classHighlightStyle
-} from '@codemirror/highlight'
+import { defaultHighlightStyle } from '@codemirror/highlight'
 import { python } from '@codemirror/lang-python'
 import pythonBuiltIns from './python.js'
 import { Theme, ThemeHighlight } from './theme.js'
@@ -56,7 +53,6 @@ export const extensions = [
   indentOnInput(),
   Theme,
   ThemeHighlight,
-  classHighlightStyle,
   defaultHighlightStyle.fallback,
   bracketMatching(),
   closeBrackets(),
