@@ -7,21 +7,38 @@ import './codemirror.css'
 import { extensions } from './codemirror.js'
 import { EditorState } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, toRefs, watchEffect } from 'vue'
 
 export default {
-  setup() {
+  props: {
+    code: {
+      type: String,
+      default: ''
+    }
+  },
+  setup(props, { attrs, slots, emit }) {
     const el = ref()
+    const { code } = toRefs(props)
 
     onMounted(() => {
-      let state = EditorState.create({
-        doc: `print('Hello World!')`,
-        extensions: extensions
+      const view = new EditorView({
+        parent: el.value,
+        state: EditorState.create({
+          extensions: [
+            ...extensions,
+            EditorView.updateListener.of((update) => {
+              if (update.docChanged) {
+                emit('change', update.state.doc.toString())
+              }
+            })
+          ]
+        })
       })
 
-      let view = new EditorView({
-        state: state,
-        parent: el.value
+      watchEffect(() => {
+        view.dispatch({
+          changes: { from: 0, to: view.state.doc.length, insert: code.value }
+        })
       })
     })
 
