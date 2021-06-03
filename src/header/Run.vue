@@ -4,6 +4,7 @@
       border
       rounded
       bg-gray-50
+      mr-0
       py-1
       px-2
       text-teal-500

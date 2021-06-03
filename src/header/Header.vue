@@ -11,12 +11,12 @@
         >The Python Playground</span
       >
     </div>
-    <Run />
     <div class="text-sm inline-flex items-center content-center">
       <Commit />
       <Download />
       <EmbedCode />
       <Share />
+      <Run />
     </div>
   </header>
 </template>
