@@ -1,8 +1,8 @@
 <template>
-  <header class="flex items-center justify-between px-4 py-2 border-b h-14">
+  <header class="border-b flex h-50px px-4 items-center justify-between">
     <div>
       <img
-        class="w-30px h-30px inline-block mr-2"
+        class="h-30px mr-2 w-30px inline-block"
         src="../assets/logo.svg"
         alt="Python Logo"
         srcset=""
@@ -11,12 +11,12 @@
         >The Python Playground</span
       >
     </div>
-    <div class="inline-flex items-center content-center">
+    <Run />
+    <div class="text-sm inline-flex items-center content-center">
       <Commit />
       <Download />
       <EmbedCode />
       <Share />
-      <GitHub />
     </div>
   </header>
 </template>
@@ -25,10 +25,10 @@
 import Commit from './Commit.vue'
 import Download from './Download.vue'
 import EmbedCode from './EmbedCode.vue'
-import GitHub from './GitHub.vue'
+import Run from './Run.vue'
 import Share from './Share.vue'
 
 export default {
-  components: { Commit, Download, EmbedCode, GitHub, Share }
+  components: { Commit, Download, EmbedCode, Run, Share }
 }
 </script>

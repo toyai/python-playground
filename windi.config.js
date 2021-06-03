@@ -8,5 +8,8 @@ export default defineConfig({
         'ew-resize': 'ew-resize'
       }
     }
+  },
+  shortcuts: {
+    'nav-btn': 'focus:outline-none mx-1 inline-flex items-center content-center'
   }
 })

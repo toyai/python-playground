@@ -8,13 +8,13 @@
     @mouseleave="stopDragging"
   >
     <div
-      class="relative border-r border-solid border-gray-300"
+      class="border-r border-solid border-gray-300 relative"
       :class="{ 'pointer-events-none': isDragging }"
       :style="{ width: getWidth() + '%' }"
     >
       <slot name="left" />
       <div
-        class="absolute -right-5px w-10px bottom-0 top-0 z-99 cursor-ew-resize"
+        class="cursor-ew-resize top-0 -right-5px bottom-0 w-10px z-99 absolute"
         @mousedown.prevent="startDragging"
       />
     </div>
@@ -68,6 +68,6 @@ export default {
 
 <style scoped>
 .split-panes {
-  height: calc(100vh - 3.5rem);
+  height: calc(100vh - 50px);
 }
 </style>
