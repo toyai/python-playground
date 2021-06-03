@@ -34,25 +34,25 @@
 </template>
 
 <script>
-import { playgroundURL, inSameWindow } from './utils.js'
-
 export default {
   setup() {
+    const inSameWindow = parent.location === location
     const question = 'What is the title for this embeddable snippet?'
     const accessibility =
       'This could help for people navigating with assistive technology such as a screen reader.'
 
     const embedCode = async () => {
       const title = prompt(`${question}\n\n${accessibility}`)
+      const id = title.split(' ').join('-').toLowerCase()
       const iframeCode = `<iframe
-  src="${playgroundURL}"
+  src="${location.href}"
   loading="lazy"
   allow="fullscreen"
-  id="playground-embed-id"
+  id="playground-embed-id-${id}"
   class="playground-embed-iframe"
   name="playground-embed"
   width="100%"
-  height="300"
+  height="500"
   style="border: 1px solid #ddd;"
   title="${title}"
 ></iframe>`
