@@ -6,3 +6,4 @@ dist-ssr
 .vscode
 *.log
 __pycache__
+**/python.json
