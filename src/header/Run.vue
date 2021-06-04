@@ -30,7 +30,7 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="mx-2 <md:hidden">Run</span>
+    <span class="mx-2">Run</span>
   </button>
 </template>
 
