@@ -7,7 +7,7 @@ import {
 } from '@codemirror/view'
 import { EditorState, Transaction } from '@codemirror/state'
 import { history, historyKeymap } from '@codemirror/history'
-import { foldGutter, foldKeymap } from '@codemirror/fold'
+import { codeFolding, foldGutter, foldKeymap } from '@codemirror/fold'
 import { indentOnInput, indentUnit } from '@codemirror/language'
 import { lineNumbers, highlightActiveLineGutter } from '@codemirror/gutter'
 import { defaultKeymap, indentLess, indentMore } from '@codemirror/commands'
@@ -47,6 +47,7 @@ export const extensions = [
   highlightActiveLineGutter(),
   highlightSpecialChars(),
   history(),
+  codeFolding(),
   foldGutter(),
   drawSelection(),
   EditorState.allowMultipleSelections.of(true),
