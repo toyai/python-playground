@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="downloadFile"
-    class="nav-btn"
+    class="header-btn"
     title="Download the code"
   >
     <svg

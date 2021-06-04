@@ -10,6 +10,7 @@ export default defineConfig({
     }
   },
   shortcuts: {
-    'nav-btn': 'focus:outline-none mx-1 inline-flex items-center content-center'
+    'header-btn':
+      'focus:outline-none mx-1 inline-flex items-center content-center'
   }
 })

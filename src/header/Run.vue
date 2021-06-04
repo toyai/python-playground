@@ -8,7 +8,7 @@
       py-1
       px-2
       text-teal-500
-      nav-btn
+      header-btn
       hover:bg-gray-100
     "
     title="Run the code"

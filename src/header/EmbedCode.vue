@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="embedCode"
-    class="nav-btn"
+    class="header-btn"
     title="Embed the code"
     v-if="inSameWindow"
   >
