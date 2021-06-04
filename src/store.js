@@ -38,7 +38,7 @@ if (urlHash) {
     files[filename] = savedFiles[filename]
   }
 } else {
-  files['main.py'] = `print('Hello World!')\n`
+  files['main.py'] = `print('Hello World!')`
 }
 
 export const store = reactive({
