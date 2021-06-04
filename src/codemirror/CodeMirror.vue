@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full bg-light-400" ref="el"></div>
+  <div class="h-full bg-light-400 w-full" ref="el"></div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="downloadFile"
-    class="focus:outline-none mx-1 inline-flex items-center content-center"
+    class="header-btn"
     title="Download the code"
   >
     <svg
@@ -13,7 +13,7 @@
       height="32"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 32 32"
-      class="w-6 h-6"
+      class="h-1.4em w-1.4em"
     >
       <path
         d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"

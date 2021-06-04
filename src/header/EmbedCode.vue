@@ -1,7 +1,7 @@
 <template>
   <button
     @click.prevent="embedCode"
-    class="focus:outline-none mx-1 inline-flex items-center content-center"
+    class="header-btn"
     title="Embed the code"
     v-if="inSameWindow"
   >
@@ -14,7 +14,7 @@
       height="32"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 32 32"
-      class="w-6 h-6"
+      class="h-1.4em w-1.4em"
     >
       <path
         d="M31 16l-7 7l-1.41-1.41L28.17 16l-5.58-5.59L24 9l7 7z"
@@ -48,9 +48,9 @@ export default {
   src="${location.href}"
   loading="lazy"
   allow="fullscreen"
-  id="playground-embed-id-${id}"
-  class="playground-embed-iframe"
-  name="playground-embed"
+  id="p-embed-${id}"
+  class="p-embed-iframe"
+  name="p-embed-${id}"
   width="100%"
   height="500"
   style="border: 1px solid #ddd;"
