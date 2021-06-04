@@ -1,7 +1,23 @@
-<template>world</template>
+<template>
+  <div class="cursor-text font-mono h-full w-full p-4">
+    <span class="result">
+      {{ store.result }}
+    </span>
+  </div>
+</template>
 
 <script>
-export default {}
+import { store } from '../store'
+
+export default {
+  setup() {
+    return { store }
+  }
+}
 </script>
 
-<style></style>
+<style scoped>
+.result::before {
+  content: '>>> ';
+}
+</style>

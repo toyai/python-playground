@@ -42,7 +42,8 @@ if (urlHash) {
 }
 
 export const store = reactive({
-  files: files
+  files: files,
+  result: 'Hello World!'
 })
 
 watchEffect(() =>
