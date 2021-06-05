@@ -1,6 +1,15 @@
 // @ts-check
 import { reactive, watchEffect } from 'vue'
 
+const urlHash = location.hash.slice(1)
+const matchedVcsURL = location.search.match(
+  /(?:github|gitlab)\.com\/(?:[\w\.\-]+\/){2,3}(?=blob).+/gi
+)
+export const store = reactive({
+  files: {},
+  result: 'Hello World!'
+})
+
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa#unicode_strings
 // convert a Unicode string to a string in which
 // each 16-bit unit occupies only one byte
@@ -31,39 +40,57 @@ function fromBinary(binary) {
 }
 
 /**
- *
- * @param {string} url
- * @returns code
+ * Fetch the raw content file from GitHub and GitLab.
+ * @returns text
  */
-async function fetchCode(url) {
-  const res = await fetch(url, { referrerPolicy: 'no-referrer' })
-  return await res.text()
+async function fetchFromVCS() {
+  let rawURL
+  const vcsURL = matchedVcsURL[0]
+
+  // Public GitHub
+  if (/^github/gi.test(vcsURL)) {
+    // replace the url with GitHub raw url
+    // GitHub raw url is like:
+    // https://raw.githubusercontent.com/toyai/python-playground/main/README.md
+    // trim the trailing `/` if needed
+    rawURL =
+      'https://raw.' +
+      vcsURL
+        .replace(/^github/, 'githubusercontent')
+        .replace('/blob', '')
+        .replace(/\/$/, '')
+  }
+  // TODO: Public GitLab
+
+  try {
+    const res = await fetch(rawURL, { referrerPolicy: 'no-referrer' })
+    return await res.text()
+  } catch (e) {
+    console.error(e)
+  }
 }
 
-const files = {}
-const urlHash = location.hash.slice(1)
-const vcsURL = location.href.match(/(github|gitlab)\.com.+/i)
-if (vcsURL) {
-  const url = vcsURL[0]
-  if (/^(github)/i.test(url)) {
-    const rawURL =
-      'https://raw.githubusercontent.com' +
-      url.replace('github.com', '').replace('/blob/', '/')
-    files['main.py'] = await fetchCode(rawURL)
+/**
+ * Setup the initial code to display.
+ * This can be the code from hash URL, VCS, or `print('Hello World!')`.
+ *
+ * Priority of content:
+ * 1. Content from urlHash
+ * 2. Content from VCS
+ * 3. `print('Hello World!')`
+ */
+export async function setupCode() {
+  if (urlHash) {
+    const savedFiles = JSON.parse(fromBinary(atob(urlHash)))
+    for (const filename in savedFiles) {
+      store.files[filename] = savedFiles[filename]
+    }
+  } else if (matchedVcsURL) {
+    store.files['main.py'] = await fetchFromVCS()
+  } else {
+    store.files['main.py'] = `print('Hello World!')`
   }
-} else if (urlHash) {
-  const savedFiles = JSON.parse(fromBinary(atob(urlHash)))
-  for (const filename in savedFiles) {
-    files[filename] = savedFiles[filename]
-  }
-} else {
-  files['main.py'] = `print('Hello World!')`
 }
-
-export const store = reactive({
-  files: files,
-  result: 'Hello World!'
-})
 
 watchEffect(() =>
   history.replaceState(

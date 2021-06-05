@@ -6,7 +6,7 @@
 import { extensions } from './codemirror.js'
 import { EditorState } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
-import { onMounted, ref, watchEffect } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 export default {
   props: {
@@ -33,11 +33,15 @@ export default {
         })
       })
 
-      watchEffect(() => {
-        view.dispatch({
-          changes: { from: 0, to: view.state.doc.length, insert: props.code }
-        })
-      })
+      watch(
+        () => props.code,
+        () => {
+          view.dispatch({
+            changes: { from: 0, to: view.state.doc.length, insert: props.code }
+          })
+        },
+        { immediate: true }
+      )
     })
 
     return { el }

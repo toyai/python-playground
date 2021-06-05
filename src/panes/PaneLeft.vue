@@ -1,23 +1,26 @@
 <template>
-  <span v-if="!code">Loading Code...</span>
-  <CodeMirror @change="onChange" :code="code" />
+  <CodeMirror v-if="code" @change="onChange" :code="code" />
+  <div v-else class="mt-4 text-center">Loading Code...</div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import CodeMirror from '../codemirror/CodeMirror.vue'
-import { store } from '../store.js'
+import { store, setupCode } from '../store.js'
 
 export default {
   components: { CodeMirror },
   setup() {
+    const code = ref()
+
     const onChange = (updatedCode) => {
       store.files['main.py'] = updatedCode
     }
-    let code
-    if (store.files['main.py']) {
-      code = store.files['main.py']
-    }
+
+    onMounted(async () => {
+      await setupCode()
+      code.value = store.files['main.py']
+    })
 
     return { onChange, code }
   }
