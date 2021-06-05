@@ -15,11 +15,17 @@ import { keywords, builtInFunctions, builtInClasses } from './python.json'
  * @returns {import('@codemirror/autocomplete').CompletionSource} completions
  */
 function makeCompletions(builtins, type, boost, info) {
+  /**
+   *
+   * @param {string | number} k
+   * @returns {string} label
+   */
+  const getLabel = (k) => (Array.isArray(builtins) ? builtins[k] : k)
   const completions = []
   for (const k in builtins) {
     completions.push(
-      snippetCompletion(Array.isArray(builtins) ? builtins[k] : k, {
-        label: Array.isArray(builtins) ? builtins[k] : k,
+      snippetCompletion(getLabel(k), {
+        label: getLabel(k),
         type: type,
         info: info ? builtins[k] : '',
         boost: boost
