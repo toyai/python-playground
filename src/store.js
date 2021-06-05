@@ -30,9 +30,28 @@ function fromBinary(binary) {
   return String.fromCharCode(...new Uint16Array(bytes.buffer))
 }
 
+/**
+ *
+ * @param {string} url
+ * @returns code
+ */
+async function fetchCode(url) {
+  const res = await fetch(url, { referrerPolicy: 'no-referrer' })
+  return await res.text()
+}
+
 const files = {}
 const urlHash = location.hash.slice(1)
-if (urlHash) {
+const vcsURL = location.href.match(/(github|gitlab)\.com.+/i)
+if (vcsURL) {
+  const url = vcsURL[0]
+  if (/^(github)/i.test(url)) {
+    const rawURL =
+      'https://raw.githubusercontent.com' +
+      url.replace('github.com', '').replace('/blob/', '/')
+    files['main.py'] = await fetchCode(rawURL)
+  }
+} else if (urlHash) {
   const savedFiles = JSON.parse(fromBinary(atob(urlHash)))
   for (const filename in savedFiles) {
     files[filename] = savedFiles[filename]

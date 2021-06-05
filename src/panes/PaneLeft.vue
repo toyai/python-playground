@@ -1,8 +1,10 @@
 <template>
+  <span v-if="!code">Loading Code...</span>
   <CodeMirror @change="onChange" :code="code" />
 </template>
 
 <script>
+import { ref } from 'vue'
 import CodeMirror from '../codemirror/CodeMirror.vue'
 import { store } from '../store.js'
 
@@ -12,7 +14,10 @@ export default {
     const onChange = (updatedCode) => {
       store.files['main.py'] = updatedCode
     }
-    const code = store.files['main.py']
+    let code
+    if (store.files['main.py']) {
+      code = store.files['main.py']
+    }
 
     return { onChange, code }
   }
