@@ -18,13 +18,13 @@ specifiers:
   '@vitejs/plugin-vue': ^1.2.3
   '@vue/compiler-sfc': ^3.0.11
   conventional-changelog-cli: ^2.1.1
-  prettier: ^2.3.0
+  prettier: ^2.3.1
   prompts: ^2.4.1
   semver: ^7.3.5
   vite: ^2.3.6
   vite-plugin-windicss: ^1.0.1
   vue: ^3.0.11
-  windicss: ^3.1.0
+  windicss: ^3.1.1
 
 devDependencies:
   '@codemirror/autocomplete': 0.18.6
@@ -44,13 +44,13 @@ devDependencies:
   '@vitejs/plugin-vue': 1.2.3_@vue+compiler-sfc@3.0.11
   '@vue/compiler-sfc': 3.0.11_vue@3.0.11
   conventional-changelog-cli: 2.1.1
-  prettier: 2.3.0
+  prettier: 2.3.1
   prompts: 2.4.1
   semver: 7.3.5
   vite: 2.3.6
   vite-plugin-windicss: 1.0.1_vite@2.3.6
   vue: 3.0.11
-  windicss: 3.1.0
+  windicss: 3.1.1
 
 packages:
   /@antfu/utils/0.1.6:
@@ -414,7 +414,7 @@ packages:
       magic-string: 0.25.7
       merge-source-map: 1.1.0
       postcss: 8.3.0
-      postcss-modules: 4.1.0_postcss@8.3.0
+      postcss-modules: 4.1.3_postcss@8.3.0
       postcss-selector-parser: 6.0.6
       source-map: 0.6.1
       vue: 3.0.11
@@ -479,7 +479,7 @@ packages:
       jiti: 1.10.1
       magic-string: 0.25.7
       micromatch: 4.0.4
-      windicss: 3.1.0
+      windicss: 3.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1216,7 +1216,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.13.8
+      uglify-js: 3.13.9
     dev: true
 
   /hard-rejection/2.1.0:
@@ -1997,10 +1997,10 @@ packages:
       postcss: 8.3.0
     dev: true
 
-  /postcss-modules/4.1.0_postcss@8.3.0:
+  /postcss-modules/4.1.3_postcss@8.3.0:
     resolution:
       {
-        integrity: sha512-5Yzfpqji60PeydVTciWGwu6YarPCcH5QKD94I/FbV82B2Lc5meY+XqIw4T6WIU0g6TFKE8J37+K88D18ollyxg==
+        integrity: sha512-dBT39hrXe4OAVYJe/2ZuIZ9BzYhOe7t+IhedYeQ2OxKwDpAGlkEN/fR0fGnrbx4BvgbMReRX4hCubYK9cE/pJQ==
       }
     peerDependencies:
       postcss: ^8.0.0
@@ -2046,10 +2046,10 @@ packages:
       source-map-js: 0.6.2
     dev: true
 
-  /prettier/2.3.0:
+  /prettier/2.3.1:
     resolution:
       {
-        integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
+        integrity: sha512-p+vNbgpLjif/+D+DwAZAbndtRrR0md0MwfmOVN9N+2RgyACMT+7tfaRnT+WDPkqnuVwleyuBIG2XBxKDme3hPA==
       }
     engines: { node: '>=10.13.0' }
     hasBin: true
@@ -2579,10 +2579,10 @@ packages:
     engines: { node: '>=8' }
     dev: true
 
-  /uglify-js/3.13.8:
+  /uglify-js/3.13.9:
     resolution:
       {
-        integrity: sha512-PvFLMFIQHfIjFFlvAch69U2IvIxK9TNzNWt1SxZGp9JZ/v70yvqIQuiJeVPPtUMOzoNt+aNRDk4wgxb34wvEqA==
+        integrity: sha512-wZbyTQ1w6Y7fHdt8sJnHfSIuWeDgk6B5rCb4E/AM6QNNPbOMIZph21PW5dRB3h7Df0GszN+t7RuUH6sWK5bF0g==
       }
     engines: { node: '>=0.8.0' }
     hasBin: true
@@ -2624,7 +2624,7 @@ packages:
       chalk: 4.1.1
       debug: 4.3.2
       vite: 2.3.6
-      windicss: 3.1.0
+      windicss: 3.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2663,10 +2663,10 @@ packages:
       }
     dev: true
 
-  /windicss/3.1.0:
+  /windicss/3.1.1:
     resolution:
       {
-        integrity: sha512-z49xITq4X1ltHIZyL4NwFTR2LXPJ0rbOOrhDXfLX+OfG4Au7+GAzqvNlzUfAaIbA8HSpnI04alQHUWH24KfNYA==
+        integrity: sha512-vLtydYOqqLwb3Jg02QYqCnna1jONLt6GuDyAtRokQY81uA8BiOyN2y3ED9QGX28CIL5Zi7bpnkBL1f1g4CHuXQ==
       }
     engines: { node: '>= 12' }
     hasBin: true

@@ -30,13 +30,13 @@
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.11",
     "conventional-changelog-cli": "^2.1.1",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "prompts": "^2.4.1",
     "semver": "^7.3.5",
     "vite": "^2.3.6",
     "vite-plugin-windicss": "^1.0.1",
     "vue": "^3.0.11",
-    "windicss": "^3.1.0"
+    "windicss": "^3.1.1"
   },
   "description": "The Python Playground",
   "keywords": [
