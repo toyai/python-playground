@@ -29,10 +29,18 @@
 </template>
 
 <script>
+import { store } from '../store'
+
 export default {
   setup() {
     const downloadFile = () => {
-      alert('download trigger')
+      const blob = new Blob([store.files['main.py']], { type: 'text/plain' })
+      const url = URL.createObjectURL(blob)
+      const el = document.createElement('a')
+      el.setAttribute('href', url)
+      el.setAttribute('download', 'main.py')
+      el.click()
+      URL.revokeObjectURL(url)
     }
 
     return { downloadFile }
