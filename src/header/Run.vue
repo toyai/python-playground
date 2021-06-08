@@ -41,20 +41,24 @@ export default {
   setup() {
     const runCode = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/v0/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'text/plain',
-            Accept: 'text/plain'
-          },
-          body: store.files['main.py'],
-          referrerPolicy: 'no-referrer'
-        })
-        console.log(res)
+        const res = await fetch(
+          `http://127.0.0.1:8000/api/v0/?source=${encodeURIComponent(
+            store.files['main.py']
+          )}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'text/plain',
+              Accept: 'text/plain'
+            },
+            body: store.files['main.py'],
+            referrerPolicy: 'no-referrer'
+          }
+        )
+        store.result = await res.text()
       } catch (e) {
         console.error(e)
       }
-      alert('run code trigger')
     }
     return { runCode }
   }

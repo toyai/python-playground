@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+from starlette.responses import PlainTextResponse
 
 from api.config import Settings, settings
 from api.routes import route as api_router
@@ -10,6 +11,7 @@ def get_application(settings: Settings = settings) -> FastAPI:
         title=settings.PROJECT_NAME,
         debug=settings.DEBUG,
         version=settings.VERSION,
+        default_response_class=PlainTextResponse,
     )
 
     application.add_middleware(
