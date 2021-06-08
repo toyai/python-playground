@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "Python Playground"
     DEBUG: bool = False
     API_PREFIX: str = f"/api/v{MAJOR}"
-    ALLOWED_HOSTS: List[str] = [""]
+    ALLOWED_HOSTS: List[str] = ["http://localhost"]
 
 
 @lru_cache()

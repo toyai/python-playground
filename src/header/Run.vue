@@ -41,7 +41,7 @@ export default {
   setup() {
     const runCode = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:8080/api/v0/', {
+        const res = await fetch('http://127.0.0.1:8000/api/v0/', {
           method: 'POST',
           headers: {
             'Content-Type': 'text/plain',
