@@ -47,7 +47,7 @@ export default {
             'Content-Type': 'text/plain',
             Accept: 'text/plain'
           },
-          body: store.files['main.py'],
+          body: JSON.stringify({ input: { source: store.files['main.py'] } }),
           referrerPolicy: 'no-referrer'
         })
         store.result = await res.text()
