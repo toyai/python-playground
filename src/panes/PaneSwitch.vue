@@ -1,0 +1,53 @@
+<template>
+  <div
+    class="
+      bg-white
+      border-t
+      flex
+      h-50px
+      text-center
+      w-full
+      py-1
+      bottom-0
+      md:hidden
+      items-center
+      justify-center
+      fixed
+    "
+  >
+    <button
+      class="
+        border
+        rounded
+        mx-1
+        py-1
+        px-4
+        focus:outline-none
+        hover:(bg-blue-gray-600
+        text-light-400)
+      "
+    >
+      Code
+    </button>
+    <button
+      class="
+        border
+        rounded
+        mx-1
+        py-1
+        px-4
+        focus:outline-none
+        hover:(bg-blue-gray-600
+        text-light-400)
+      "
+    >
+      Result
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PaneSwitch'
+}
+</script>

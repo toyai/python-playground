@@ -1,6 +1,9 @@
 <template>
-  <CodeMirror v-if="code" @change="onChange" :code="code" />
-  <div v-else class="mt-4 text-center">Loading Code...</div>
+  <button class="*file-tab-btn">main.py</button>
+  <div class="border-t h-[calc(100%_-_35px)] w-full">
+    <CodeMirror v-if="code" @change="onChange" :code="code" />
+    <div v-else class="mt-4 text-center">Loading Code...</div>
+  </div>
 </template>
 
 <script>

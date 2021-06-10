@@ -1,7 +1,7 @@
 <template>
   <div
     ref="container"
-    class="flex split-panes"
+    class="flex h-[calc(100vh_-_50px)]"
     :class="{ 'cursor-ew-resize': isDragging }"
     @mousemove="onDragging"
     @mouseup="stopDragging"
@@ -26,13 +26,17 @@
       <slot name="right" />
     </div>
   </div>
+  <PaneSwitch />
 </template>
 
 <script>
 import { ref } from 'vue'
+import PaneSwitch from './PaneSwitch.vue'
+
 export default {
+  components: { PaneSwitch },
   setup() {
-    const width = ref(50)
+    const width = ref(60)
     const isDragging = ref(false)
     const container = ref()
 
@@ -65,9 +69,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.split-panes {
-  height: calc(100vh - 50px);
-}
-</style>

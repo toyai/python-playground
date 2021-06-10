@@ -1,5 +1,6 @@
 <template>
-  <div class="cursor-text font-mono h-full w-full p-4">
+  <button class="*file-tab-btn">Result</button>
+  <div class="cursor-text font-mono p-4 border-t">
     <span class="result">
       {{ store.result }}
     </span>
