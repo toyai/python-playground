@@ -2,11 +2,10 @@ import io
 from contextlib import redirect_stdout
 
 from fastapi import APIRouter, Body
-
-from api.models import InputCode
+from models import InputCode
 
 route = APIRouter()
-input = Body(..., media_type="text/plain", embed=True, alias="input")
+input = Body(...)
 
 
 @route.post("/")

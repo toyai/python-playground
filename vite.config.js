@@ -15,6 +15,7 @@ export default defineConfig({
     })
   ],
   define: {
+    __API_URL__: JSON.stringify(process.env.PLAYGROUND_API_URL),
     __COMMIT__: JSON.stringify(commit)
   }
 })

@@ -30,32 +30,37 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="mx-2">Run</span>
+    <span class="mx-2">{{ status }}</span>
   </button>
 </template>
 
 <script>
+import { ref } from 'vue'
 import { store } from '../store'
 
 export default {
   setup() {
+    const status = ref('Run')
+
     const runCode = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:8000/api/v0/`, {
+        status.value = 'Running'
+        const res = await fetch(`${__API_URL__}/api/v0/`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'text/plain',
-            Accept: 'text/plain'
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
           },
-          body: JSON.stringify({ input: { source: store.files['main.py'] } }),
+          body: JSON.stringify({ source: store.files['main.py'] }),
           referrerPolicy: 'no-referrer'
         })
         store.result = await res.text()
+        status.value = 'Run'
       } catch (e) {
         console.error(e)
       }
     }
-    return { runCode }
+    return { runCode, status }
   }
 }
 </script>
