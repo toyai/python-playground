@@ -41,11 +41,16 @@ import { store } from '../store'
 export default {
   setup() {
     const status = ref('Run')
+    const API_URL = import.meta.env.PROD
+      ? __API_URL__
+      : import.meta.env.DEV
+      ? 'http://127.0.0.1:8000'
+      : null
 
     const runCode = async () => {
       try {
         status.value = 'Running'
-        const res = await fetch(`${__API_URL__}/api/v0/`, {
+        const res = await fetch(`${API_URL}/api/v0/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -55,10 +60,10 @@ export default {
           referrerPolicy: 'no-referrer'
         })
         store.result = await res.text()
-        status.value = 'Run'
       } catch (e) {
         console.error(e)
       }
+      status.value = 'Run'
     }
     return { runCode, status }
   }
