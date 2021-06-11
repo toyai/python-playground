@@ -1,9 +1,11 @@
 <template>
-  <button class="*file-tab-btn">Result</button>
-  <div class="cursor-text font-mono p-4 border-t">
-    <span class="result">
-      {{ store.result }}
-    </span>
+  <div class="h-full w-screen">
+    <button class="*file-tab-btn">Result</button>
+    <div class="border-t cursor-text font-mono p-4">
+      <span class="result">
+        {{ store.result }}
+      </span>
+    </div>
   </div>
 </template>
 
