@@ -6,7 +6,7 @@ const codeFont = 'Monaco,Menlo,Consolas,"Liberation Mono",monospace;'
 export const Theme = EditorView.theme({
   '&': {
     fontSize: '0.875rem',
-    height: '100%'
+    height: 'calc(100% - 50px)'
   },
   '&.cm-focused': {
     outline: 'none'
