@@ -4,8 +4,6 @@ WORKDIR /workspace
 
 COPY ./ /workspace/
 
-RUN ls -l
-
 RUN apt-get update && \
   apt-get upgrade -y && \
   apt-get autoremove -y && \
