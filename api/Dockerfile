@@ -7,7 +7,7 @@ RUN apt-get update && \
   apt-get autoremove -y && \
   apt-get clean
 
-COPY ./* ./
+COPY ./* /workspace/
 
 RUN pip install -U pip wheel setuptools --no-cache-dir && \
   pip install -r ./api/requirements.txt --no-cache-dir
