@@ -8,9 +8,7 @@ RUN apt-get update && \
   apt-get upgrade -y && \
   apt-get autoremove -y && \
   apt-get clean && \
-  python -m venv playground-venv && \
-  . playground-venv/bin/activate && \
-  pip install -U pip wheel setuptools --no-cache-dir && \
+  python -m pip install -U pip wheel setuptools --no-cache-dir && \
   pip install -r ./api/requirements.txt --no-cache-dir
 
 CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker" ]
