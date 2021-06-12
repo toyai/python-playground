@@ -2,7 +2,7 @@ FROM python:3.7.10-slim-buster
 
 WORKDIR /workspace
 
-COPY ./* /workspace/
+COPY ./ /workspace/
 
 RUN ls -l
 
