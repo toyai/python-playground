@@ -1,2 +1,2 @@
-pip install -r api/requirements.txt
+pip install -r requirements.txt
 gunicorn -w 4 -k uvicorn.workers.UvicornWorker
