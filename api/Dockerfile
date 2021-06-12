@@ -1,14 +1,15 @@
 FROM python:3.7.10-slim-buster
 
+WORKDIR /workspace
+
 RUN apt-get update && \
   apt-get upgrade -y && \
   apt-get autoremove -y && \
   apt-get clean
 
-COPY . ./app
+COPY ./* ./
 
-RUN cd ./app/api && \
-  pip install -U pip wheel setuptools --no-cache-dir && \
-  pip install -r requirements.txt --no-cache-dir
+RUN pip install -U pip wheel setuptools --no-cache-dir && \
+  pip install -r ./api/requirements.txt --no-cache-dir
 
 CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker" ]
