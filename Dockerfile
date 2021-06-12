@@ -11,4 +11,4 @@ RUN apt-get update && \
   python -m pip install -U pip wheel setuptools --no-cache-dir && \
   pip install -r ./api/requirements.txt --no-cache-dir
 
-CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker" ]
+CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "api.main:app" ]
