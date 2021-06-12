@@ -2,7 +2,9 @@ FROM python:3.7.10-slim-buster
 
 WORKDIR /workspace
 
-COPY ./* ./
+COPY ./* /workspace/
+
+RUN ls -l
 
 RUN apt-get update && \
   apt-get upgrade -y && \
