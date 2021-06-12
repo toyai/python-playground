@@ -9,7 +9,7 @@ RUN apt-get update && \
   apt-get autoremove -y && \
   apt-get clean && \
   python -m venv playground-venv && \
-  source playground-venv/bin/activate && \
+  . playground-venv/bin/activate && \
   pip install -U pip wheel setuptools --no-cache-dir && \
   pip install -r /workspace/api/requirements.txt --no-cache-dir
 
