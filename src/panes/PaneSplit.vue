@@ -1,7 +1,7 @@
 <template>
   <div
     ref="container"
-    class="flex h-[calc(100vh_-_50px)] w-full overflow-hidden"
+    class="flex h-[calc(100vh_-_50px)] overflow-hidden"
     :class="{ 'cursor-ew-resize': isDragging }"
     @mousemove="onDragging"
     @mouseup="stopDragging"

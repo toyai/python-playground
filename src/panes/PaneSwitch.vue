@@ -5,7 +5,6 @@
       border-t
       flex
       h-50px
-      text-center
       w-full
       py-1
       bottom-0
@@ -15,13 +14,13 @@
       fixed
     "
   >
-    <template v-for="(s, i) in ['Code', 'Result']" :key="i">
+    <template v-for="(btn, i) in ['Code', 'Result']" :key="i">
       <button
         class="*pane-switch-btn"
-        :class="{ 'bg-blue-500 text-light-400': activeSwitch === s }"
-        @click.prevent="clickCodeResult(s)"
+        :class="{ 'bg-blue-500 text-light-400': activeBtn === btn }"
+        @click.prevent="clickCodeResult(btn)"
       >
-        {{ s }}
+        {{ btn }}
       </button>
     </template>
   </div>
@@ -30,17 +29,16 @@
 <script>
 import { ref } from 'vue'
 export default {
-  name: 'PaneSwitch',
   emits: ['btnChange'],
   setup(_, ctx) {
-    const activeSwitch = ref('Code')
+    const activeBtn = ref('Code')
 
     const clickCodeResult = (btn) => {
-      activeSwitch.value = btn
-      ctx.emit('btnChange', activeSwitch.value)
+      activeBtn.value = btn
+      ctx.emit('btnChange', activeBtn.value)
     }
 
-    return { clickCodeResult, activeSwitch }
+    return { clickCodeResult, activeBtn }
   }
 }
 </script>
