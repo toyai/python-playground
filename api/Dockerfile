@@ -2,14 +2,15 @@ FROM python:3.7.10-slim-buster
 
 WORKDIR /workspace
 
+COPY ./* /workspace/
+
 RUN apt-get update && \
   apt-get upgrade -y && \
   apt-get autoremove -y && \
-  apt-get clean
-
-COPY ./* /workspace/
-
-RUN pip install -U pip wheel setuptools --no-cache-dir && \
-  pip install -r ./api/requirements.txt --no-cache-dir
+  apt-get clean && \
+  python -m venv playground-venv && \
+  source playground-venv/bin/activate && \
+  pip install -U pip wheel setuptools --no-cache-dir && \
+  pip install -r /workspace/api/requirements.txt --no-cache-dir
 
 CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker" ]
