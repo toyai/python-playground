@@ -1,28 +1,21 @@
-import contextlib
-import sys
-from io import StringIO
+import io
+from contextlib import redirect_stdout
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Body
+
+from api.models import InputCode
 
 route = APIRouter()
-
-
-@contextlib.contextmanager
-def stdoutIO(stdout=None):
-    old = sys.stdout
-    if stdout is None:
-        stdout = StringIO()
-    sys.stdout = stdout
-    yield stdout
-    sys.stdout = old
+input = Body(...)
 
 
 @route.post("/")
-def index(source: str):
-    with stdoutIO() as s:
+def index(input: InputCode = input):
+    f = io.StringIO()
+    with redirect_stdout(f):
         try:
-            exec(source)
+            exec(input.source)
         except Exception as e:
             raise e
-        result = s.getvalue()
-    return result
+    out = f.getvalue()
+    return out
