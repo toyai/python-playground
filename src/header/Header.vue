@@ -8,7 +8,7 @@
         srcset=""
       />
       <span class="text-2xl inline-block align-middle <md:hidden"
-        >The Python Playground</span
+        >Python Playground</span
       >
     </div>
     <div class="text-sm inline-flex items-center content-center">
