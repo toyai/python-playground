@@ -1,5 +1,5 @@
 <template>
-  <header class="border-b flex h-50px px-3 items-center justify-between">
+  <header class="border-b flex h-50px px-4 items-center justify-between">
     <div>
       <img
         class="h-30px mr-1 w-30px inline-block"
