@@ -1,4 +1,4 @@
-# The Python Playground
+# Python Playground
 
 Install Node v14 and pnpm v6
 
