@@ -8,13 +8,16 @@ const pyVer = execFileSync('python', ['-V']).toString().trim().split(' ')[1]
 const commit = execFileSync('git', ['rev-parse', 'HEAD']).toString().trim()
 const idArr = process.env.REVIEW_ID?.split('-')
 const prNumber = idArr?.[idArr.length - 1]
-const apiURL = process.env.PULL_REQUEST
-  ? `https://playground-preview-pr-${prNumber}.herokuapp.com`
-  : process.env.NODE_ENV === 'production'
-  ? 'https://python-playground-api.herokuapp.com'
-  : 'http://127.0.0.1:8000'
 
-console.log(process.env.PULL_REQUEST, process.env.CONTEXT)
+// PULL_REQUEST env var is string `true` or `false`
+const apiURL =
+  process.env.PULL_REQUEST === 'true'
+    ? `https://pp-api-pr-${prNumber}.herokuapp.com`
+    : process.env.NODE_ENV === 'production'
+    ? 'https://python-playground-api.herokuapp.com'
+    : 'http://127.0.0.1:8000'
+
+console.log(apiURL)
 
 // https://vitejs.dev/config/
 export default defineConfig({
