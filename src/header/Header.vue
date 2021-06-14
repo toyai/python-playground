@@ -2,13 +2,18 @@
   <header class="border-b flex h-50px px-4 items-center justify-between">
     <div>
       <img
-        class="h-30px mr-2 w-30px inline-block"
+        class="h-30px mr-1 w-30px inline-block"
         src="../assets/logo.svg"
         alt="Python Logo"
         srcset=""
       />
-      <span class="text-2xl inline-block align-middle <md:hidden"
-        >Python Playground</span
+      <span class="mr-1 text-xl align-middle <sm:hidden"
+        >The Python Playground</span
+      >
+      <span
+        class="text-sm align-middle <sm:hidden"
+        title="Python Version used to run the code"
+        >(v{{ pyVer }})</span
       >
     </div>
     <div class="text-sm inline-flex items-center content-center">
@@ -29,6 +34,10 @@ import Run from './Run.vue'
 import Share from './Share.vue'
 
 export default {
-  components: { Commit, Download, EmbedCode, Run, Share }
+  components: { Commit, Download, EmbedCode, Run, Share },
+  setup() {
+    const pyVer = __PY_VER__
+    return { pyVer }
+  }
 }
 </script>

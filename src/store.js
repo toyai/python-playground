@@ -7,7 +7,7 @@ const matchedVcsURL = location.search.match(
 )
 export const store = reactive({
   files: {},
-  result: 'Hello World!'
+  result: ''
 })
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa#unicode_strings

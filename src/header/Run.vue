@@ -30,7 +30,7 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="mx-2">{{ status }}</span>
+    <span class="mx-1">{{ status }}</span>
   </button>
 </template>
 

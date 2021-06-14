@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import WindiCSS from 'vite-plugin-windicss'
 import { execFileSync } from 'child_process'
 
+const pyVer = execFileSync('python', ['-V']).toString().trim().split(' ')[1]
 const commit = execFileSync('git', ['rev-parse', 'HEAD']).toString().trim()
 const idArr = process.env.REVIEW_ID?.split('-')
 const prNumber = idArr?.[idArr.length - 1]
@@ -23,6 +24,7 @@ export default defineConfig({
   ],
   define: {
     __API_URL__: JSON.stringify(apiURL),
+    __PY_VER__: JSON.stringify(pyVer),
     __COMMIT__: JSON.stringify(commit)
   }
 })
