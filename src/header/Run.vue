@@ -48,11 +48,9 @@ export default {
         const res = await fetch(`${__API_URL__}/api/v0/`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json'
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ source: store.files['main.py'] }),
-          referrerPolicy: 'no-referrer'
+          body: JSON.stringify({ source: store.files['main.py'] })
         })
         store.result = await res.text()
       } catch (e) {
