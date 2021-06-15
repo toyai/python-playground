@@ -1,4 +1,5 @@
 import io
+import traceback
 from contextlib import redirect_stdout
 
 from fastapi import APIRouter, Body
@@ -15,7 +16,8 @@ def index(input: InputCode = input):
     with redirect_stdout(f):
         try:
             exec(input.source)
-        except Exception as e:
-            raise e
+        except Exception:
+            return traceback.format_exc()
     out = f.getvalue()
+    f.close()
     return out
