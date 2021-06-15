@@ -64,9 +64,9 @@
       "prettier --parser=typescript --write"
     ],
     "*.py": [
-      "flake8 --max-line-length 80",
       "isort --profile black",
-      "black -l 80"
+      "black -l 80",
+      "flake8 --max-line-length 80"
     ]
   },
   "engines": {
