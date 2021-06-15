@@ -6,7 +6,7 @@ from pydantic import BaseSettings
 
 PR_NUMBER = os.getenv("HEROKU_PR_NUMBER")
 PROD_SITE_NAME = os.getenv("PG_FRONTEND_SITE_NAME")
-SUBDOMAIN_URL = os.getenv("SUBDOMAIN_URL")
+CUSTOM_DOMAIN_URL = os.getenv("CUSTOM_DOMAIN_URL")
 
 
 class Settings(BaseSettings):
@@ -29,8 +29,8 @@ class Settings(BaseSettings):
         ALLOWED_HOSTS.append(
             f"https://deploy-preview-{PR_NUMBER}--{PROD_SITE_NAME}.netlify.app"
         )
-    if SUBDOMAIN_URL:
-        ALLOWED_HOSTS.append(SUBDOMAIN_URL)
+    if CUSTOM_DOMAIN_URL:
+        ALLOWED_HOSTS.append(CUSTOM_DOMAIN_URL)
 
 
 @lru_cache()
