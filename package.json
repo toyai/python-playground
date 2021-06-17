@@ -13,8 +13,8 @@
     "prepare": "husky install",
     "release": "node scripts/release.js",
     "serve": "vite preview",
-    "setup": "pnpm i && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
-    "setup:ci": "pnpm i --frozen-lockfile && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install"
+    "setup": "pnpm i && pip install -r backend/requirements.txt && sh scripts/run_code_style.sh install",
+    "setup:ci": "pnpm i --frozen-lockfile && pip install -r backend/requirements.txt && sh scripts/run_code_style.sh install"
   },
   "devDependencies": {
     "@codemirror/autocomplete": "^0.18.6",
