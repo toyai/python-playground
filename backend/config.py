@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     PORT: int = 8000
     ALLOWED_HOSTS: List[str] = [
         f"https://{PROD_SITE_NAME}.netlify.app",
-        "http://localhost:3000",
+        "http://localehost:3000",
     ]
     
     # Deploy
@@ -69,4 +69,4 @@ for logger_name in settings.LOGGERS:
     logging_logger = logging.getLogger(logger_name)
     logging_logger.handlers = [InterceptHandler(level=settings.LOGGER_LEVEL)]
 
-logger.configure(handlers=[{"sink": sys.stderr, "level": settings.LOGGER_LEVEL}])
+logger.configure(handlers=[{"sink": sys.stderr, "level": settings.LOGGER_LEVEL up}])
