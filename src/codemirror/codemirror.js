@@ -3,7 +3,8 @@ import {
   keymap,
   highlightSpecialChars,
   drawSelection,
-  highlightActiveLine
+  highlightActiveLine,
+  EditorView
 } from '@codemirror/view'
 import { EditorState, Transaction } from '@codemirror/state'
 import { history, historyKeymap } from '@codemirror/history'
@@ -50,6 +51,7 @@ export const extensions = [
   codeFolding(),
   foldGutter(),
   drawSelection(),
+  EditorView.lineWrapping,
   EditorState.allowMultipleSelections.of(true),
   indentOnInput(),
   Theme,
