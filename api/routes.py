@@ -1,4 +1,5 @@
 import io
+import traceback
 from contextlib import redirect_stdout
 
 from fastapi import APIRouter, Body
@@ -11,11 +12,11 @@ input = Body(...)
 
 @route.post("/")
 def index(input: InputCode = input):
-    f = io.StringIO()
-    with redirect_stdout(f):
-        try:
-            exec(input.source)
-        except Exception as e:
-            raise e
-    out = f.getvalue()
-    return out
+    with io.StringIO() as f:
+        with redirect_stdout(f):
+            try:
+                exec(input.source)
+            except Exception:
+                return traceback.format_exc()
+        result = f.getvalue()
+    return result

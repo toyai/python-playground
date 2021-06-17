@@ -53,7 +53,7 @@ import PaneSwitch from './PaneSwitch.vue'
 export default {
   components: { PaneLeft, PaneRight, PaneSwitch },
   setup() {
-    const width = ref(60)
+    const width = ref(50)
     const isDragging = ref(false)
     const container = ref()
     const activeBtn = ref('Code')
