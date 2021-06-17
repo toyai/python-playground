@@ -39,7 +39,7 @@ pip install -r requirements.txt
 Run Uvicorn
 
 ```sh
-uvicorn api.main:app --reload
+uvicorn backend.main:app --reload
 ```
 
 Check api from `http://127.0.0.1:8000/docs`
