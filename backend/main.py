@@ -2,9 +2,9 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import PlainTextResponse
 
-from api.config import Settings, settings
-from api.routes import route as api_router
-from api.events import create_start_app_handler, create_stop_app_handler
+from backend.config import Settings, settings
+from backend.routes import route as api_router
+from backend.events import create_start_app_handler, create_stop_app_handler
 
 
 def get_application(settings: Settings = settings) -> FastAPI:

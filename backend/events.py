@@ -3,7 +3,7 @@ from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
 
-from api.config import settings
+from backend.config import settings
 
 
 def create_start_app_handler(app: FastAPI) -> Callable:

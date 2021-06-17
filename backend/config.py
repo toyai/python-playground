@@ -8,7 +8,7 @@ from typing import List, Tuple
 from loguru import logger
 from pydantic import BaseSettings
 
-from api.loggings import InterceptHandler
+from backend.loggings import InterceptHandler
 
 
 class Environment(str, Enum):
@@ -35,6 +35,11 @@ class Settings(BaseSettings):
         f"https://{PROD_SITE_NAME}.netlify.app",
         "http://localhost:3000",
     ]
+    
+    # Deploy
+    PR_NUMBER: str = ""
+    PROD_SITE_NAME: str = ""
+    CUSTOM_DOMAIN_URL: str = ""
     
     if PR_NUMBER:
         ALLOWED_HOSTS.append(

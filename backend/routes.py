@@ -4,7 +4,7 @@ from contextlib import redirect_stdout
 
 from fastapi import APIRouter, Body
 
-from api.models import InputCode
+from backend.models import InputCode
 
 route = APIRouter()
 input = Body(...)
