@@ -4,14 +4,14 @@ from contextlib import redirect_stdout
 
 from fastapi import APIRouter, Body
 
-from backend.models import InputCode
+from api.models import InputCode
 
 route = APIRouter()
 input = Body(...)
 
 
 @route.post("/")
-def execute(input: InputCode = input):
+def index(input: InputCode = input):
     with io.StringIO() as f:
         with redirect_stdout(f):
             try:

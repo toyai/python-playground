@@ -1,10 +1,22 @@
+import logging
+
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import PlainTextResponse
 
-from backend.config import Settings, settings
-from backend.routes import route as api_router
-from backend.events import create_start_app_handler, create_stop_app_handler
+from api.config import Settings, settings
+from api.routes import route as api_router
+
+URL = "http://127.0.0.1:8000"
+cyan = "\x1b[36m"
+end = "\x1b[39m"
+
+logger = logging.getLogger("uvicorn")
+
+
+async def show_api_docs():
+    logger.info(f"Swagger API docs: {cyan}{URL}/docs{end}")
+    logger.info(f"Redoc API docs: {cyan}{URL}/redoc{end}")
 
 
 def get_application(settings: Settings = settings) -> FastAPI:
@@ -23,8 +35,7 @@ def get_application(settings: Settings = settings) -> FastAPI:
         allow_headers=["*"],
     )
 
-    application.add_event_handler("startup", create_start_app_handler(application))
-    application.add_event_handler("shutdown", create_stop_app_handler(application))
+    application.add_event_handler("startup", show_api_docs)
 
     application.include_router(api_router, prefix=settings.API_PREFIX)
 

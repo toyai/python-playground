@@ -9,6 +9,6 @@ RUN apt-get update && \
   apt-get autoremove -y && \
   apt-get clean && \
   python -m pip install -U pip wheel setuptools --no-cache-dir && \
-  pip install -r ./backend/requirements.txt --no-cache-dir
+  pip install -r ./api/requirements.txt --no-cache-dir
 
-CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "backend.main:app" ]
+CMD [ "gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "api.main:app" ]
