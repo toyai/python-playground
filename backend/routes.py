@@ -7,11 +7,10 @@ from fastapi import APIRouter, Body
 from backend.models import InputCode
 
 route = APIRouter()
-input = Body(...)
 
 
-@route.post("/")
-def index(input: InputCode = input):
+@route.post("")
+def execute(input: InputCode = Body(..., embed=True)):
     with io.StringIO() as f:
         with redirect_stdout(f):
             try:

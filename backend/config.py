@@ -25,6 +25,11 @@ class Settings(BaseSettings):
     PATCH: str = ""
     SUFFIX: str = ""
     VERSION: str = f"{MAJOR}.{MINOR}.{PATCH}{SUFFIX}"
+    
+    # Deploy
+    PR_NUMBER: str = ""
+    PROD_SITE_NAME: str = ""
+    CUSTOM_DOMAIN_URL: str = ""
 
     # App
     PROJECT_NAME: str = "Python Playground"
@@ -35,11 +40,6 @@ class Settings(BaseSettings):
         f"https://{PROD_SITE_NAME}.netlify.app",
         "http://localehost:3000",
     ]
-    
-    # Deploy
-    PR_NUMBER: str = ""
-    PROD_SITE_NAME: str = ""
-    CUSTOM_DOMAIN_URL: str = ""
     
     if PR_NUMBER:
         ALLOWED_HOSTS.append(
@@ -69,4 +69,4 @@ for logger_name in settings.LOGGERS:
     logging_logger = logging.getLogger(logger_name)
     logging_logger.handlers = [InterceptHandler(level=settings.LOGGER_LEVEL)]
 
-logger.configure(handlers=[{"sink": sys.stderr, "level": settings.LOGGER_LEVEL up}])
+logger.configure(handlers=[{"sink": sys.stderr, "level": settings.LOGGER_LEVEL}])
