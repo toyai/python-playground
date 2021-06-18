@@ -45,7 +45,7 @@ export default {
     const runCode = async () => {
       try {
         status.value = 'Running'
-        const res = await fetch(`${__API_URL__}/api/v0/`, {
+        const res = await fetch(`${__API_URL__}/api/playground/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
