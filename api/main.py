@@ -25,7 +25,7 @@ def get_application(settings: Settings = settings) -> FastAPI:
         debug=settings.DEBUG,
         version=settings.VERSION,
         default_response_class=PlainTextResponse,
-        on_startup=show_api_docs,
+        on_startup=[show_api_docs],
     )
 
     application.add_middleware(
