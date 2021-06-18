@@ -8,7 +8,6 @@
     "build": "python scripts/gen_pycompletions.py && vite build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dev": "vite",
-    "dev:api": "uvicorn api.main:app --reload",
     "fmt": "prettier --write . && sh scripts/run_code_style.sh fmt",
     "lint": "prettier --check . && sh scripts/run_code_style.sh lint",
     "prepare": "husky install",

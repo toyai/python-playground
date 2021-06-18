@@ -14,7 +14,7 @@ end = "\x1b[39m"
 logger = logging.getLogger("uvicorn")
 
 
-async def show_api_docs():
+def show_api_docs():
     logger.info(f"Swagger API docs: {cyan}{URL}/docs{end}")
     logger.info(f"Redoc API docs: {cyan}{URL}/redoc{end}")
 
@@ -25,6 +25,7 @@ def get_application(settings: Settings = settings) -> FastAPI:
         debug=settings.DEBUG,
         version=settings.VERSION,
         default_response_class=PlainTextResponse,
+        on_startup=show_api_docs,
     )
 
     application.add_middleware(
@@ -34,8 +35,6 @@ def get_application(settings: Settings = settings) -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-
-    application.add_event_handler("startup", show_api_docs)
 
     application.include_router(api_router, prefix=settings.API_PREFIX)
 
