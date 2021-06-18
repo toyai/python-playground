@@ -16,7 +16,7 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="sr-only">Share</span>
+    <span class="sr-only" data-test="shareText">Share</span>
   </button>
 </template>
 

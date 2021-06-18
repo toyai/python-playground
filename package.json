@@ -15,7 +15,8 @@
     "release": "node scripts/release.js",
     "serve": "vite preview",
     "setup": "pnpm i && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
-    "setup:ci": "pnpm i --frozen-lockfile && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install"
+    "setup:ci": "pnpm i --frozen-lockfile && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
+    "test": "node src/__tests__/test.mjs"
   },
   "devDependencies": {
     "@codemirror/autocomplete": "^0.18.6",
@@ -34,12 +35,15 @@
     "@codemirror/view": "^0.18.16",
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.11",
+    "@vue/test-utils": "^2.0.0-rc.6",
     "conventional-changelog-cli": "^2.1.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1",
     "prompts": "^2.4.1",
+    "puppeteer": "^10.0.0",
     "semver": "^7.3.5",
+    "uvu": "^0.5.1",
     "vite": "^2.3.6",
     "vite-plugin-windicss": "^1.0.1",
     "vue": "^3.0.11",

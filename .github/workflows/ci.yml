@@ -36,3 +36,4 @@ jobs:
           pnpm setup:ci
 
       - run: pnpm lint
+      - run: pnpm test
