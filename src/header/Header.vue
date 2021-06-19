@@ -5,14 +5,17 @@
         class="h-30px mr-1 w-30px inline-block"
         src="../assets/logo.svg"
         alt="Python Logo"
-        srcset=""
+        data-test="logo"
       />
-      <span class="mr-1 text-xl align-middle <sm:hidden"
+      <span
+        class="mr-1 text-xl align-middle <sm:hidden"
+        data-test="playgroundText"
         >The Python Playground</span
       >
       <span
         class="text-sm align-middle <sm:hidden"
         title="Python Version used to run the code"
+        data-test="pyVer"
         >(v{{ pyVer }})</span
       >
     </div>

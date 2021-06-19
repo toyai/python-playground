@@ -12,8 +12,6 @@ test('run code button', async () => {
 
   await wrapper.find('button').trigger('click')
   assert.is(status.text(), 'Running', 'Button should include Running')
-
-  // assert.is(status.text(), 'Run', 'Button should re-include Run')
 })
 
 test.run()

@@ -10,8 +10,7 @@ test('copy shareable URL', () => {
   const share = wrapper.get('[data-test="shareText"]')
 
   assert.ok(share.exists(), 'Share text should exist.')
-  assert.ok(share.isVisible(), 'Share text should be invisible.')
-  // assert.equal(wrapper.emitted())
+  assert.ok(share.isVisible(), 'Share text should be visible.')
 })
 
 test.run()

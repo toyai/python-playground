@@ -24,7 +24,7 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="sr-only">Download</span>
+    <span class="sr-only" data-test="downloadText">Download</span>
   </button>
 </template>
 

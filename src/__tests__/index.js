@@ -1,3 +1,1 @@
-import './header/Commit.spec.js'
-import './header/Run.spec.js'
-import './header/Share.spec.js'
+const modules = import.meta.globEager('./**/*.spec.js')
