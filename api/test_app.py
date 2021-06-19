@@ -11,6 +11,12 @@ def test_index_404():
     assert response.json() == {"detail": "Not Found"}
 
 
+def test_no_access_to_api():
+    response = client.get("/api/playground/")
+    assert response.status_code == 405
+    assert response.json() == {"detail": "Method Not Allowed"}
+
+
 def test_post_code():
     response = client.post(
         "/api/playground/",
