@@ -4,5 +4,5 @@
 
 /*
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'
   Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
