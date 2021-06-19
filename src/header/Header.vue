@@ -1,8 +1,10 @@
 <template>
   <header class="border-b flex h-50px px-4 items-center justify-between">
-    <div>
+    <h1>
       <img
         class="h-30px mr-1 w-30px inline-block"
+        width="30"
+        height="30"
         src="../assets/logo.svg"
         alt="Python Logo"
         data-test="logo"
@@ -10,7 +12,7 @@
       <span
         class="mr-1 text-xl align-middle <sm:hidden"
         data-test="playgroundText"
-        >The Python Playground</span
+        >Python Playground</span
       >
       <span
         class="text-sm align-middle <sm:hidden"
@@ -18,7 +20,7 @@
         data-test="pyVer"
         >(v{{ pyVer }})</span
       >
-    </div>
+    </h1>
     <div class="text-sm inline-flex items-center content-center">
       <Commit />
       <Download />

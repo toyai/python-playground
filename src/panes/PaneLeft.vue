@@ -1,7 +1,7 @@
 <template>
   <div class="h-full w-full <md:w-screen">
-    <button class="*file-tab-btn" data-test="mainPy">main.py</button>
-    <div class="border-t h-[calc(100%_-_35px)] w-full">
+    <div class="*file-tab-btn" data-test="mainPy">main.py</div>
+    <div class="border-t h-[calc(100%_-_32px)] w-full">
       <CodeMirror v-if="code" @change="onChange" :code="code" />
       <div v-else class="mt-4 text-center" data-test="loadingStatus">
         Loading Code...
