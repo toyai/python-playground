@@ -3,7 +3,7 @@ import { test } from 'uvu'
 import * as assert from 'uvu/assert'
 import PaneRight from '../../panes/PaneRight.vue'
 
-test('PaneRight', async () => {
+test('PaneRight', () => {
   const wrapper = mount(PaneRight)
 
   const resultBtn = wrapper.get('[data-test="resultBtn"]')

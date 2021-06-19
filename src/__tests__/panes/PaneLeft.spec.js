@@ -3,7 +3,7 @@ import { test } from 'uvu'
 import * as assert from 'uvu/assert'
 import PaneLeft from '../../panes/PaneLeft.vue'
 
-test('PaneLeft', async () => {
+test('PaneLeft', () => {
   const wrapper = mount(PaneLeft)
 
   const mainPy = wrapper.get('[data-test="mainPy"]')
