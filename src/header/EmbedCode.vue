@@ -29,7 +29,7 @@
         fill="currentColor"
       ></path>
     </svg>
-    <span class="sr-only">Embed Code</span>
+    <span class="sr-only" data-test="embedText">Embed Code</span>
   </button>
 </template>
 

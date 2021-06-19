@@ -5,6 +5,7 @@
     rel="noopener noreferrer"
     class="mx-1"
     title="Current Playground Version"
+    data-test="commit"
   >
     v{{ version }}@{{ currentCommit }}
   </a>

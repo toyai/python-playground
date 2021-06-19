@@ -19,6 +19,7 @@
         class="*pane-switch-btn"
         :class="{ 'bg-blue-500 text-light-400': activeBtn === btn }"
         @click.prevent="clickCodeResult(btn)"
+        :data-test="'switchBtn' + btn"
       >
         {{ btn }}
       </button>

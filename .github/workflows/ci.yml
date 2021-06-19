@@ -36,3 +36,5 @@ jobs:
           pnpm setup:ci
 
       - run: pnpm lint
+      - run: python scripts/gen_pycompletions.py
+      - run: pnpm test
