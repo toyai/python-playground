@@ -1,3 +1,8 @@
 /assets/*
   cache-control: max-age=31536000
   cache-control: immutable
+
+/*
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff

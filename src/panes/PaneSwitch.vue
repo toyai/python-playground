@@ -17,7 +17,7 @@
     <template v-for="(btn, i) in ['Code', 'Result']" :key="i">
       <button
         class="*pane-switch-btn"
-        :class="{ 'bg-blue-500 text-light-400': activeBtn === btn }"
+        :class="{ 'bg-blue-600 text-white': activeBtn === btn }"
         @click.prevent="clickCodeResult(btn)"
         :data-test="'switchBtn' + btn"
       >

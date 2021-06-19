@@ -1,14 +1,15 @@
 <template>
   <div class="h-full w-full <md:w-screen">
-    <button class="*file-tab-btn" data-test="resultBtn">Result</button>
+    <div class="*file-tab-btn" data-test="resultBtn">Result</div>
     <div class="border-t font-mono p-4">
+      <label for="result">Click ▶ Run to see the result:</label>
       <textarea
+        id="result"
         name="playground result"
-        class="border w-full py-1 px-2 focus:outline-none"
+        class="border mt-1 w-full py-1 px-2"
         v-model="store.result"
         readonly
         rows="12"
-        placeholder="Click ▶ Run to see the result"
         data-test="result"
       />
     </div>

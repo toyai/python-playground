@@ -1,6 +1,7 @@
 <template>
   <div
     ref="container"
+    tabindex="0"
     class="flex h-[calc(100vh_-_50px)] overflow-hidden"
     :class="{ 'cursor-ew-resize': isDragging }"
     @mousemove="onDragging"
