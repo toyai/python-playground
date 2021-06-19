@@ -13,10 +13,12 @@ test('PaneRight', () => {
   assert.ok(resultBtn.exists(), 'resultBtn should exist')
   assert.ok(resultBtn.isVisible(), 'resultBtn should be visible.')
   assert.is(
-    result.attributes('placeholder'),
-    'Click ▶ Run to see the result',
-    'result should match initial placeholder'
+    result.text(),
+    'Click ▶ Run to see the result:',
+    'result should match with the label.'
   )
+  assert.ok(result.exists(), 'result should exist')
+  assert.ok(result.isVisible(), 'result should be visible.')
 })
 
 test.run()
