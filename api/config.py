@@ -1,3 +1,4 @@
+import json
 import os
 from functools import lru_cache
 from typing import List
@@ -8,19 +9,18 @@ PR_NUMBER = os.getenv("HEROKU_PR_NUMBER")
 PROD_SITE_NAME = os.getenv("PG_FRONTEND_SITE_NAME")
 CUSTOM_DOMAIN_URL = os.getenv("CUSTOM_DOMAIN_URL")
 
+with open("package.json", "r") as pkg:
+    VERSION = json.load(pkg)["version"]
+
 
 class Settings(BaseSettings):
     # Version
-    MAJOR: int = 0
-    MINOR: int = 1
-    PATCH: str = ""
-    SUFFIX: str = ""
-    VERSION: str = f"{MAJOR}.{MINOR}.{PATCH}{SUFFIX}"
+    VERSION: str = VERSION
 
     # App
     PROJECT_NAME: str = "Python Playground"
     DEBUG: bool = False
-    API_PREFIX: str = f"/api/v{MAJOR}"
+    API_PREFIX: str = "/api/playground"
     ALLOWED_HOSTS: List[str] = [
         f"https://{PROD_SITE_NAME}.netlify.app",
         "http://localhost:3000",

@@ -1,4 +1,5 @@
 import logging
+import os
 
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
@@ -19,6 +20,9 @@ def show_api_docs():
     logger.info(f"Redoc API docs: {cyan}{URL}/redoc{end}")
 
 
+SHOW_API_DOCS = os.getenv("SHOW_API_DOCS")
+
+
 def get_application(settings: Settings = settings) -> FastAPI:
     application = FastAPI(
         title=settings.PROJECT_NAME,
@@ -26,6 +30,9 @@ def get_application(settings: Settings = settings) -> FastAPI:
         version=settings.VERSION,
         default_response_class=PlainTextResponse,
         on_startup=[show_api_docs],
+        openapi_url="/openapi.json" if SHOW_API_DOCS else None,
+        docs_url="/docs" if SHOW_API_DOCS else None,
+        redoc_url="/redoc" if SHOW_API_DOCS else None,
     )
 
     application.add_middleware(
