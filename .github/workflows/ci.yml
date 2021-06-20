@@ -31,10 +31,11 @@ jobs:
 
       - name: Setup
         run: |
-          pip install wheel setuptools pip -U
+          pip install wheel setuptools pip pytest -U
           npm i -g pnpm
           pnpm setup:ci
 
       - run: pnpm lint
       - run: python scripts/gen_pycompletions.py
       - run: pnpm test
+      - run: pytest api/test_*.py --color yes
