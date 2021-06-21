@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full <md:w-screen">
+  <div class="h-full w-full <sm:w-screen">
     <div class="*file-tab-btn" data-test="resultBtn">Result</div>
     <div class="border-t font-mono p-4">
       <label for="result" data-test="result"
