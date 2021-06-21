@@ -9,7 +9,7 @@
     @mouseleave="stopDragging"
   >
     <div
-      class="left relative mobile md:(border-r border-solid border-gray-300)"
+      class="left relative mobile sm:(border-r border-solid border-gray-300)"
       :class="{
         'pointer-events-none': isDragging,
         active: activeBtn === 'Code'
@@ -26,7 +26,7 @@
           w-10px
           z-99
           absolute
-          <md:hidden
+          <sm:hidden
         "
         @mousedown.prevent="startDragging"
       />
@@ -96,14 +96,14 @@ export default {
 
 <style scoped lang="postcss">
 .mobile {
-  @apply <md:(transform transition-transform duration-250 !w-full);
+  @apply <sm:(transform transition-transform duration-250 !w-full);
 }
 .left,
 .right.active {
-  @apply <md:-translate-x-full;
+  @apply <sm:-translate-x-full;
 }
 .right,
 .left.active {
-  @apply <md:translate-x-0;
+  @apply <sm:translate-x-0;
 }
 </style>

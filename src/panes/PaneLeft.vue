@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full <md:w-screen">
+  <div class="h-full w-full <sm:w-screen">
     <div class="*file-tab-btn" data-test="mainPy">main.py</div>
     <div class="border-t h-[calc(100%_-_32px)] w-full">
       <CodeMirror v-if="code" @change="onChange" :code="code" />

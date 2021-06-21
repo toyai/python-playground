@@ -8,7 +8,7 @@
       w-full
       py-1
       bottom-0
-      md:hidden
+      sm:hidden
       items-center
       justify-evenly
       fixed
