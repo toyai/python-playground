@@ -9,17 +9,17 @@
 
 - Open python files from public GitHub repository. [Demo](https://python-playground.netlify.app/?github.com/toyai/python-playground/blob/main/api/main.py)
 
-- Unique URL for every python code/file.
+- Unique URL for every python code/file. [Demo](https://python-playground.netlify.app/#ewAiAG0AYQBpAG4ALgBwAHkAIgA6ACIAIwAgAFAAeQB0AGgAbwBuACAAMwA6ACAARgBpAGIAbwBuAGEAYwBjAGkAIABzAGUAcgBpAGUAcwAgAHUAcAAgAHQAbwAgAG4AXABuAGQAZQBmACAAZgBpAGIAKABuACkAOgBcAG4AIAAgACAAIABhACwAIABiACAAPQAgADAALAAgADEAXABuACAAIAAgACAAdwBoAGkAbABlACAAYQAgADwAIABuADoAXABuACAAIAAgACAAIAAgACAAIABwAHIAaQBuAHQAKABhACwAIABlAG4AZAA9ACcAIAAnACkAXABuACAAIAAgACAAIAAgACAAIABhACwAIABiACAAPQAgAGIALAAgAGEAKwBiAFwAbgAgACAAIAAgAHAAcgBpAG4AdAAoACkAXABuAGYAaQBiACgAMQAwADAAMAApAFwAbgAiAH0A)
 
-- Embeddable in the documentations.
+- Embeddable in the documentations. [Demo](https://ydcjeff.github.io/sphinxcontrib-playground/play.html)
+
+- Show the python traceback as a result if errors occur. [Demo](https://python-playground.netlify.app/#ewAiAG0AYQBpAG4ALgBwAHkAIgA6ACIAcAByAGkAbgB0ACgAJwBIAGUAbABsAG8AIABXAG8AcgBsAGQAIQAnACIAfQA=)
+
+- Autocompletion for Python builtins.
 
 - Export the code to `.py` file.
 
 - Mobile friendly.
-
-- Autocompletion for Python builtins.
-
-- Show the python traceback as a result if errors occur.
 
 ## Goal
 
