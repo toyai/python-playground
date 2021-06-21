@@ -32,7 +32,7 @@ You will need:
 Create a python virtual environment:
 
 ```sh
-python -m venv ~/.python-playground
+python3 -m venv ~/.python-playground
 source ~/.python-playground/bin/activate
 ```
 
@@ -70,3 +70,5 @@ pnpm run dev:api # for backend FastAPI app
 For backend testing, visit http://127.0.0.1:8000/docs for Swagger API docs and http://127.0.0.1:8000/redoc for Redoc API docs.
 
 Backend source code are in `api`.
+
+See more commands in `scripts` section in the [package.json](../package.json).
