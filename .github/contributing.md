@@ -29,6 +29,11 @@ You will need:
 - [pnpm v6](https://pnpm.io/installation).
 - [Python 3.6 and greater](https://www.python.org/downloads/).
 
+If you are using VSCode, the below extensions might be useful:
+
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+- [WindiCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense)
+
 Create a python virtual environment:
 
 ```sh
