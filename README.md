@@ -75,7 +75,7 @@ To use this app for the python projects:
 
      - Set `VALUE` to be your netlify site name. _Only the site name is required. You can omit `.netlify.app`_.
 
-     - If the frontend app will be deployed from custom domain url, set `CUSTOM_DOMAIN_URL` as `KEY` and your custom domain url as `VALUE`. _This custom domain url has to be full URL._ If you are not sure about the custom domain url, use the output of `location.origin` in `Console` tab of DevTool in the browser.
+     - If the frontend app will be deployed from custom domain url, set `CUSTOM_DOMAIN_URL` as `KEY` and your custom domain url as `VALUE`. _**This custom domain url has to be full URL**_. If you are not sure about the custom domain url, use the output of `location.origin` in `Console` tab of DevTool in the browser.
 
    - Go back to `Deploy` tab. Click `Deploy Branch`.
 
