@@ -14,9 +14,11 @@
     "prepare": "husky install",
     "release": "node scripts/release.js",
     "serve": "vite preview",
-    "setup": "pnpm i && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
+    "setup:dev": "pnpm i && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
     "setup:ci": "pnpm i --frozen-lockfile && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
-    "test": "node src/__tests__/test.mjs"
+    "test": "pnpm run test:front && pnpm run test:back",
+    "test:front": "node src/__tests__/test.mjs",
+    "test:back": "pytest api/test_*.py --color yes"
   },
   "devDependencies": {
     "@codemirror/autocomplete": "^0.18.6",

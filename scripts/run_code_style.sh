@@ -11,6 +11,8 @@ elif [ $1 = "fmt" ]; then
   black . -l 80
 elif [ $1 = "install" ]; then
   pip install \
+    pytest \
+    requests \
     black \
     isort \
     flake8 \
