@@ -7,7 +7,7 @@
 
 ## Features
 
-- Open python files from public GitHub repository. [Demo](https://python-playground.netlify.app/?github.com/toyai/python-playground/blob/main/api/main.py)
+- Open python files from public GitHub repository. [Demo](https://python-playground.netlify.app/?https://github.com/toyai/python-playground/blob/main/api/main.py)
 
 - Unique URL for every python code/file. [Demo](https://python-playground.netlify.app/#ewAiAG0AYQBpAG4ALgBwAHkAIgA6ACIAIwAgAFAAeQB0AGgAbwBuACAAMwA6ACAARgBpAGIAbwBuAGEAYwBjAGkAIABzAGUAcgBpAGUAcwAgAHUAcAAgAHQAbwAgAG4AXABuAGQAZQBmACAAZgBpAGIAKABuACkAOgBcAG4AIAAgACAAIABhACwAIABiACAAPQAgADAALAAgADEAXABuACAAIAAgACAAdwBoAGkAbABlACAAYQAgADwAIABuADoAXABuACAAIAAgACAAIAAgACAAIABwAHIAaQBuAHQAKABhACwAIABlAG4AZAA9ACcAIAAnACkAXABuACAAIAAgACAAIAAgACAAIABhACwAIABiACAAPQAgAGIALAAgAGEAKwBiAFwAbgAgACAAIAAgAHAAcgBpAG4AdAAoACkAXABuAGYAaQBiACgAMQAwADAAMAApAFwAbgAiAH0A)
 
@@ -90,6 +90,12 @@ To use this app for the python projects:
 7. You have successfully deployed your own version of the Python Playground.
 
 8. Since most python projects are using [Sphinx](https://www.sphinx-doc.org/en/master/) as a documentation generator, we have made a sphinx extension – [sphinxcontrib-playground](https://github.com/ydcjeff/sphinxcontrib-playground). Refer to [its documentation](https://ydcjeff.github.io/sphinxcontrib-playground/) for the usage.
+
+9. To open a python file from GitHub, append the Playground URL + `?` in front of the github url. For example, if the github url is https://github.com/toyai/python-playground/blob/main/api/main.py, then the playground url to open that file will be like: https://python-playground.netlify.app/?https://github.com/toyai/python-playground/blob/main/api/main.py.
+
+> NOTE
+>
+> `?` is required. `https://` can be omitted if you wish though not required.
 
 ## Tech Stack
 
