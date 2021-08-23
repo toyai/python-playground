@@ -24,12 +24,7 @@ console.log(apiURL)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    WindiCSS({
-      transformCSS: 'pre'
-    })
-  ],
+  plugins: [vue(), WindiCSS()],
   define: {
     __API_URL__: JSON.stringify(apiURL),
     __PY_VER__: JSON.stringify(pyVer),

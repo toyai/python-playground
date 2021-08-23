@@ -1,3 +1,14 @@
+<script setup>
+async function shareURL() {
+  try {
+    await navigator.clipboard.writeText(location.href)
+    alert('Shareable URL has been copied to the clipboard.')
+  } catch (e) {
+    console.error(e)
+  }
+}
+</script>
+
 <template>
   <button class="*header-btn" @click.prevent="shareURL" title="Share the code">
     <svg
@@ -19,14 +30,3 @@
     <span class="sr-only" data-test="shareText">Share</span>
   </button>
 </template>
-
-<script setup>
-const shareURL = async () => {
-  try {
-    await navigator.clipboard.writeText(location.href)
-    alert('Shareable URL has been copied to the clipboard.')
-  } catch (e) {
-    console.error(e)
-  }
-}
-</script>

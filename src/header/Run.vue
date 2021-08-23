@@ -1,3 +1,27 @@
+<script setup>
+import { ref } from 'vue'
+import { store } from '../store'
+
+const status = ref('Run')
+
+async function runCode() {
+  try {
+    status.value = 'Running'
+    const res = await fetch(`${__API_URL__}/api/playground/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ source: store.files['main.py'] })
+    })
+    store.result = await res.text()
+  } catch (e) {
+    console.error(e)
+  }
+  status.value = 'Run'
+}
+</script>
+
 <template>
   <button
     class="
@@ -33,32 +57,3 @@
     <span class="mx-1" data-test="runStatus">{{ status }}</span>
   </button>
 </template>
-
-<script>
-import { ref } from 'vue'
-import { store } from '../store'
-
-export default {
-  setup() {
-    const status = ref('Run')
-
-    const runCode = async () => {
-      try {
-        status.value = 'Running'
-        const res = await fetch(`${__API_URL__}/api/playground/`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ source: store.files['main.py'] })
-        })
-        store.result = await res.text()
-      } catch (e) {
-        console.error(e)
-      }
-      status.value = 'Run'
-    }
-    return { runCode, status }
-  }
-}
-</script>

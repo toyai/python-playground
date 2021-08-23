@@ -1,3 +1,34 @@
+<script setup>
+const inSameWindow = parent.location === location
+const question = 'What is the title for this embeddable snippet?'
+const accessibility =
+  'This could help for people navigating with assistive technology such as a screen reader.'
+
+async function embedCode() {
+  const title = prompt(`${question}\n\n${accessibility}`)
+  const id = title.split(' ').join('-').toLowerCase()
+  const iframeCode = `<iframe
+  src="${location.href}"
+  loading="lazy"
+  allow="fullscreen"
+  id="p-embed-${id}"
+  class="p-embed-iframe"
+  name="p-embed-${id}"
+  width="100%"
+  height="500"
+  style="border: 1px solid #ddd;"
+  title="${title}"
+  ></iframe>`
+
+  try {
+    await navigator.clipboard.writeText(iframeCode)
+    alert('Embeddable code has been copied to the clipboard.')
+  } catch (e) {
+    console.error(e)
+  }
+}
+</script>
+
 <template>
   <button
     @click.prevent="embedCode"
@@ -32,39 +63,3 @@
     <span class="sr-only" data-test="embedText">Embed Code</span>
   </button>
 </template>
-
-<script>
-export default {
-  setup() {
-    const inSameWindow = parent.location === location
-    const question = 'What is the title for this embeddable snippet?'
-    const accessibility =
-      'This could help for people navigating with assistive technology such as a screen reader.'
-
-    const embedCode = async () => {
-      const title = prompt(`${question}\n\n${accessibility}`)
-      const id = title.split(' ').join('-').toLowerCase()
-      const iframeCode = `<iframe
-  src="${location.href}"
-  loading="lazy"
-  allow="fullscreen"
-  id="p-embed-${id}"
-  class="p-embed-iframe"
-  name="p-embed-${id}"
-  width="100%"
-  height="500"
-  style="border: 1px solid #ddd;"
-  title="${title}"
-></iframe>`
-
-      try {
-        await navigator.clipboard.writeText(iframeCode)
-        alert('Embeddable code has been copied to the clipboard.')
-      } catch (e) {
-        console.error(e)
-      }
-    }
-    return { embedCode, inSameWindow }
-  }
-}
-</script>

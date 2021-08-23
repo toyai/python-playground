@@ -1,3 +1,7 @@
+<script setup>
+import { store } from '../store'
+</script>
+
 <template>
   <div class="h-full w-full <sm:w-screen">
     <div class="*file-tab-btn" data-test="resultBtn">Result</div>
@@ -16,13 +20,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { store } from '../store'
-
-export default {
-  setup() {
-    return { store }
-  }
-}
-</script>
