@@ -1,3 +1,8 @@
+<script setup>
+import { version } from '../../package.json'
+const currentCommit = __COMMIT__.slice(0, 7)
+</script>
+
 <template>
   <a
     :href="`https://github.com/toyai/python-playground/commit/${currentCommit}`"
@@ -10,8 +15,3 @@
     v{{ version }}@{{ currentCommit }}
   </a>
 </template>
-
-<script setup>
-import { version } from '../../package.json'
-const currentCommit = __COMMIT__.slice(0, 7)
-</script>

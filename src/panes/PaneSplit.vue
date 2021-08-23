@@ -1,3 +1,35 @@
+<script setup>
+import { ref } from 'vue'
+import PaneLeft from './PaneLeft.vue'
+import PaneRight from './PaneRight.vue'
+import PaneSwitch from './PaneSwitch.vue'
+
+const width = ref(50)
+const isDragging = ref(false)
+const container = ref()
+const activeBtn = ref('Code')
+
+function onDragging(e) {
+  if (isDragging.value) {
+    const draggingPosition = e.pageX
+    const totalSize = container.value.offsetWidth
+    width.value = (draggingPosition / totalSize) * 100
+  }
+}
+function startDragging() {
+  isDragging.value = true
+}
+function stopDragging() {
+  isDragging.value = false
+}
+function getWidth() {
+  return width.value < 20 ? 20 : width.value > 80 ? 80 : width.value
+}
+function onBtnChange(btn) {
+  activeBtn.value = btn
+}
+</script>
+
 <template>
   <div
     ref="container"
@@ -9,10 +41,19 @@
     @mouseleave="stopDragging"
   >
     <div
-      class="left relative mobile sm:(border-r border-solid border-gray-300)"
+      class="
+        relative
+        sm:(border-r
+        border-solid border-gray-300)
+        <sm:(transform
+        transition-transform
+        duration-250
+        translate-x-0
+        !w-full)
+      "
       :class="{
         'pointer-events-none': isDragging,
-        active: activeBtn === 'Code'
+        '<sm:-translate-x-full': activeBtn === 'Result'
       }"
       :style="{ width: getWidth() + '%' }"
     >
@@ -32,10 +73,17 @@
       />
     </div>
     <div
-      class="right relative mobile"
+      class="
+        relative
+        <sm:(transform
+        transition-transform
+        duration-250
+        translate-x-0
+        !w-full)
+      "
       :class="{
         'pointer-events-none': isDragging,
-        active: activeBtn === 'Result'
+        '<sm:-translate-x-full': activeBtn === 'Result'
       }"
       :style="{ width: 100 - getWidth() + '%' }"
     >
@@ -45,65 +93,10 @@
   <PaneSwitch @btn-change="onBtnChange" />
 </template>
 
-<script>
-import { ref } from 'vue'
-import PaneLeft from './PaneLeft.vue'
-import PaneRight from './PaneRight.vue'
-import PaneSwitch from './PaneSwitch.vue'
-
-export default {
-  components: { PaneLeft, PaneRight, PaneSwitch },
-  setup() {
-    const width = ref(50)
-    const isDragging = ref(false)
-    const container = ref()
-    const activeBtn = ref('Code')
-
-    const onDragging = (e) => {
-      if (isDragging.value) {
-        const draggingPosition = e.pageX
-        const totalSize = container.value.offsetWidth
-        width.value = (draggingPosition / totalSize) * 100
-      }
-    }
-    const startDragging = () => {
-      isDragging.value = true
-    }
-    const stopDragging = () => {
-      isDragging.value = false
-    }
-    const getWidth = () => {
-      return width.value < 20 ? 20 : width.value > 80 ? 80 : width.value
-    }
-    const onBtnChange = (btn) => {
-      activeBtn.value = btn
-    }
-
-    return {
-      activeBtn,
-      width,
-      getWidth,
-      container,
-      isDragging,
-      onDragging,
-      startDragging,
-      stopDragging,
-      onBtnChange
-    }
+<style>
+@media (max-width: 639.9px) {
+  .\!\<sm\:w-full {
+    width: 100% !important;
   }
-}
-</script>
-
-<style scoped lang="postcss">
-.mobile {
-  @apply <sm:(transform transition-transform duration-250 !w-full);
-}
-.left,
-.right.active {
-  @apply <sm:-translate-x-full;
-}
-.right,
-.left.active {
-  @apply <sm:translate-x-0;
 }
 </style>

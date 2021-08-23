@@ -1,3 +1,13 @@
+<script setup>
+import Commit from './Commit.vue'
+import Download from './Download.vue'
+import EmbedCode from './EmbedCode.vue'
+import Run from './Run.vue'
+import Share from './Share.vue'
+
+const pyVer = __PY_VER__
+</script>
+
 <template>
   <header class="border-b flex h-50px px-4 items-center justify-between">
     <h1>
@@ -30,19 +40,3 @@
     </div>
   </header>
 </template>
-
-<script>
-import Commit from './Commit.vue'
-import Download from './Download.vue'
-import EmbedCode from './EmbedCode.vue'
-import Run from './Run.vue'
-import Share from './Share.vue'
-
-export default {
-  components: { Commit, Download, EmbedCode, Run, Share },
-  setup() {
-    const pyVer = __PY_VER__
-    return { pyVer }
-  }
-}
-</script>

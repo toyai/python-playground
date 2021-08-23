@@ -31,7 +31,7 @@ You will need:
 
 If you are using VSCode, the below extensions might be useful:
 
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+- [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 - [WindiCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense)
 
 Create a python virtual environment:

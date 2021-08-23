@@ -1,3 +1,16 @@
+<script setup>
+import { ref } from 'vue'
+
+const emit = defineEmits(['btnChange'])
+
+const activeBtn = ref('Code')
+
+function clickCodeResult(btn) {
+  activeBtn.value = btn
+  emit('btnChange', activeBtn.value)
+}
+</script>
+
 <template>
   <div
     class="
@@ -8,10 +21,10 @@
       w-full
       py-1
       bottom-0
-      sm:hidden
       items-center
       justify-evenly
       fixed
+      sm:hidden
     "
   >
     <template v-for="(btn, i) in ['Code', 'Result']" :key="i">
@@ -26,21 +39,3 @@
     </template>
   </div>
 </template>
-
-<script>
-import { ref } from 'vue'
-
-export default {
-  emits: ['btnChange'],
-  setup(_, ctx) {
-    const activeBtn = ref('Code')
-
-    const clickCodeResult = (btn) => {
-      activeBtn.value = btn
-      ctx.emit('btnChange', activeBtn.value)
-    }
-
-    return { clickCodeResult, activeBtn }
-  }
-}
-</script>

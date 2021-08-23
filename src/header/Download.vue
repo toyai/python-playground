@@ -1,3 +1,17 @@
+<script setup>
+import { store } from '../store'
+
+function downloadFile() {
+  const blob = new Blob([store.files['main.py']], { type: 'text/plain' })
+  const url = URL.createObjectURL(blob)
+  const el = document.createElement('a')
+  el.setAttribute('href', url)
+  el.setAttribute('download', 'main.py')
+  el.click()
+  URL.revokeObjectURL(url)
+}
+</script>
+
 <template>
   <button
     @click.prevent="downloadFile"
@@ -27,23 +41,3 @@
     <span class="sr-only" data-test="downloadText">Download</span>
   </button>
 </template>
-
-<script>
-import { store } from '../store'
-
-export default {
-  setup() {
-    const downloadFile = () => {
-      const blob = new Blob([store.files['main.py']], { type: 'text/plain' })
-      const url = URL.createObjectURL(blob)
-      const el = document.createElement('a')
-      el.setAttribute('href', url)
-      el.setAttribute('download', 'main.py')
-      el.click()
-      URL.revokeObjectURL(url)
-    }
-
-    return { downloadFile }
-  }
-}
-</script>
