@@ -92,11 +92,3 @@ function onBtnChange(btn) {
   </div>
   <PaneSwitch @btn-change="onBtnChange" />
 </template>
-
-<style>
-@media (max-width: 639.9px) {
-  .\!\<sm\:w-full {
-    width: 100% !important;
-  }
-}
-</style>

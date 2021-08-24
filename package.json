@@ -47,7 +47,7 @@
     "semver": "^7.3.5",
     "uvu": "^0.5.1",
     "vite": "^2.5.0",
-    "vite-plugin-windicss": "^1.2.7",
+    "vite-plugin-windicss": "^1.2.8",
     "vue": "^3.2.4",
     "windicss": "^3.1.7"
   },
