@@ -1,4 +1,5 @@
 {
   "extends": ["config:base", "schedule:daily"],
-  "labels": ["dependencies"]
+  "labels": ["dependencies"],
+  "pin": false
 }
