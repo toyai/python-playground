@@ -37,7 +37,7 @@
     "@codemirror/view": "^0.19.18",
     "@vitejs/plugin-vue": "^1.9.4",
     "@vue/compiler-sfc": "^3.2.22",
-    "@vue/test-utils": "^1.2.2",
+    "@vue/test-utils": "^2.0.0-rc.16",
     "conventional-changelog-cli": "^2.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.0.2",
@@ -48,7 +48,8 @@
     "uvu": "^0.5.2",
     "vite": "^2.6.14",
     "vite-plugin-windicss": "^1.5.1",
-    "vue": "^2.6.14",
+    "vue": "^3.2.22",
+    "vue-router": "^4.0.12",
     "windicss": "^3.2.1"
   },
   "keywords": [
