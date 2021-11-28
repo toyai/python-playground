@@ -16,7 +16,6 @@ specifiers:
   '@codemirror/state': ^0.19.6
   '@codemirror/view': ^0.19.20
   '@vitejs/plugin-vue': ^1.9.4
-  '@vue/compiler-sfc': ^3.2.22
   '@vue/test-utils': ^2.0.0-rc.17
   conventional-changelog-cli: ^2.1.1
   husky: ^7.0.4
@@ -48,7 +47,6 @@ devDependencies:
   '@codemirror/state': 0.19.6
   '@codemirror/view': 0.19.20
   '@vitejs/plugin-vue': 1.9.4_vite@2.6.14
-  '@vue/compiler-sfc': 3.2.22
   '@vue/test-utils': 2.0.0-rc.17_vue@3.2.22
   conventional-changelog-cli: 2.1.1
   husky: 7.0.4
