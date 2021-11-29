@@ -22,7 +22,7 @@ specifiers:
   lint-staged: ^12.1.1
   prettier: ^2.4.1
   prompts: ^2.4.2
-  puppeteer: ^11.0.0
+  puppeteer: ^12.0.0
   semver: ^7.3.5
   uvu: ^0.5.2
   vite: ^2.6.14
@@ -53,7 +53,7 @@ devDependencies:
   lint-staged: 12.1.1
   prettier: 2.4.1
   prompts: 2.4.2
-  puppeteer: 11.0.0
+  puppeteer: 12.0.0
   semver: 7.3.5
   uvu: 0.5.2
   vite: 2.6.14
@@ -919,8 +919,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /devtools-protocol/0.0.901419:
-    resolution: {integrity: sha512-4INMPwNm9XRpBukhNbF7OB6fNTTCaI8pzy/fXg0xQzAy5h3zL1P8xT3QazgKqBrb/hAYwIBizqDBZ7GtJE74QQ==}
+  /devtools-protocol/0.0.937139:
+    resolution: {integrity: sha512-daj+rzR3QSxsPRy5vjjthn58axO8c11j58uY0lG5vvlJk/EiOdCWOptGdkXDjtuRHr78emKq0udHCXM4trhoDQ==}
     dev: true
 
   /diff/5.0.0:
@@ -1945,13 +1945,13 @@ packages:
       once: 1.4.0
     dev: true
 
-  /puppeteer/11.0.0:
-    resolution: {integrity: sha512-6rPFqN1ABjn4shgOICGDBITTRV09EjXVqhDERBDKwCLz0UyBxeeBH6Ay0vQUJ84VACmlxwzOIzVEJXThcF3aNg==}
+  /puppeteer/12.0.0:
+    resolution: {integrity: sha512-a+vLxtwuDLUIq8Vz8X5bX+YMhcQrgyfq0Jo5Wcm49EfUawgCxeCN9/rUAS3VdAAiQZ1PKiv9pGyQN8jj1ypecQ==}
     engines: {node: '>=10.18.1'}
     requiresBuild: true
     dependencies:
       debug: 4.3.2
-      devtools-protocol: 0.0.901419
+      devtools-protocol: 0.0.937139
       extract-zip: 2.0.1
       https-proxy-agent: 5.0.0
       node-fetch: 2.6.5
