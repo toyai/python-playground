@@ -15,7 +15,7 @@ specifiers:
   '@codemirror/search': ^0.19.4
   '@codemirror/state': ^0.19.6
   '@codemirror/view': ^0.19.31
-  '@vitejs/plugin-vue': ^1.10.2
+  '@vitejs/plugin-vue': ^2.0.0
   '@vue/test-utils': ^2.0.0-rc.17
   conventional-changelog-cli: ^2.1.1
   husky: ^7.0.4
@@ -46,7 +46,7 @@ devDependencies:
   '@codemirror/search': 0.19.4
   '@codemirror/state': 0.19.6
   '@codemirror/view': 0.19.31
-  '@vitejs/plugin-vue': 1.10.2_vite@2.7.2
+  '@vitejs/plugin-vue': 2.0.0_vite@2.7.2+vue@3.2.26
   '@vue/test-utils': 2.0.0-rc.17_vue@3.2.26
   conventional-changelog-cli: 2.1.1
   husky: 7.0.4
@@ -318,13 +318,15 @@ packages:
     dev: true
     optional: true
 
-  /@vitejs/plugin-vue/1.10.2_vite@2.7.2:
-    resolution: {integrity: sha512-/QJ0Z9qfhAFtKRY+r57ziY4BSbGUTGsPRMpB/Ron3QPwBZM4OZAZHdTa4a8PafCwU5DTatXG8TMDoP8z+oDqJw==}
+  /@vitejs/plugin-vue/2.0.0_vite@2.7.2+vue@3.2.26:
+    resolution: {integrity: sha512-4Xn1h9OcaAf7KYrvz2oEi52fCCCLcCzyr3pDOrzYTWrs0DrzNOXt9fT5IiGb1f/uoNTdX3aAkXVGNXrGkzF/zw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
+      vue: ^3.2.25
     dependencies:
       vite: 2.7.2
+      vue: 3.2.26
     dev: true
 
   /@vue/compiler-core/3.2.26:
