@@ -4,6 +4,7 @@
   "description": "Interactive Playground for Python",
   "author": "Jeff Yang",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "python scripts/gen_pycompletions.py && vite build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -17,7 +18,7 @@
     "setup:dev": "pnpm i && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
     "setup:ci": "pnpm i --frozen-lockfile && pip install -r api/requirements.txt && sh scripts/run_code_style.sh install",
     "test": "pnpm run test:front && pnpm run test:back",
-    "test:front": "node src/__tests__/test.mjs",
+    "test:front": "node src/__tests__/test.js",
     "test:back": "pytest api/test_*.py --color yes"
   },
   "devDependencies": {
@@ -40,15 +41,14 @@
     "conventional-changelog-cli": "^2.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
+    "playwright-chromium": "^1.17.1",
     "prettier": "^2.5.1",
     "prompts": "^2.4.2",
-    "puppeteer": "^12.0.1",
     "semver": "^7.3.5",
     "uvu": "^0.5.2",
     "vite": "^2.7.2",
     "vite-plugin-windicss": "^1.5.4",
     "vue": "^3.2.26",
-    "vue-router": "^4.0.12",
     "windicss": "^3.3.0"
   },
   "keywords": [
@@ -56,27 +56,15 @@
     "playground",
     "repl"
   ],
-  "prettier": {
-    "semi": false,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "printWidth": 80,
-    "trailingComma": "none"
-  },
+  "prettier": "@ydcjeff/prettier-config",
   "lint-staged": {
-    "*.(html|css|js|md|json|vue|y?(a)ml)": [
-      "prettier --write"
-    ],
-    "*.ts": [
-      "prettier --parser=typescript --write"
+    "*": [
+      "prettier --write --ignore-unknown"
     ],
     "*.py": [
       "isort --profile black",
       "black -l 80",
       "flake8 --max-line-length 80"
     ]
-  },
-  "engines": {
-    "node": ">=v16.13.1"
   }
 }

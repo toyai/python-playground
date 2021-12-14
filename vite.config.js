@@ -28,6 +28,6 @@ export default defineConfig({
   define: {
     __API_URL__: JSON.stringify(apiURL),
     __PY_VER__: JSON.stringify(pyVer),
-    __COMMIT__: JSON.stringify(commit)
-  }
+    __COMMIT__: JSON.stringify(commit),
+  },
 })

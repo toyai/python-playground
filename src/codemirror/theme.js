@@ -6,26 +6,26 @@ const codeFont = 'Monaco,Menlo,Consolas,"Liberation Mono",monospace;'
 export const Theme = EditorView.theme({
   '&': {
     fontSize: '0.875rem',
-    height: 'calc(100% - 50px)'
+    height: 'calc(100% - 50px)',
   },
   '&.cm-focused': {
-    outline: 'none'
+    outline: 'none',
   },
   '&.cm-focused .cm-cursor': {
-    borderLeftWidth: '2px'
+    borderLeftWidth: '2px',
   },
   '.cm-scroller': {
-    fontFamily: codeFont
+    fontFamily: codeFont,
   },
   '.cm-matchingBracket, .cm-nonmatchingBracket': {
-    backgroundColor: 'rgba(136, 136, 136, 0.3)'
+    backgroundColor: 'rgba(136, 136, 136, 0.3)',
   },
   '.cm-completionIcon': {
-    paddingRight: '1rem'
+    paddingRight: '1rem',
   },
   '.cm-tooltip.cm-tooltip-autocomplete > ul': {
-    fontFamily: codeFont
-  }
+    fontFamily: codeFont,
+  },
 })
 
 export const ThemeHighlight = HighlightStyle.define([
@@ -35,17 +35,17 @@ export const ThemeHighlight = HighlightStyle.define([
       t.controlKeyword,
       t.operatorKeyword,
       t.definitionKeyword,
-      t.keyword
+      t.keyword,
     ],
-    class: 'text-red-600'
+    class: 'text-red-600',
   },
   {
     tag: [t.bool, t.null],
-    class: 'text-cyan-600'
+    class: 'text-cyan-600',
   },
   {
     tag: [t.variableName],
-    class: 'text-blue-gray-600'
+    class: 'text-blue-gray-600',
   },
   {
     tag: [
@@ -53,29 +53,29 @@ export const ThemeHighlight = HighlightStyle.define([
       t.self,
       t.function(t.variableName),
       t.className,
-      t.definition(t.className)
+      t.definition(t.className),
     ],
-    class: 'text-purple-600'
+    class: 'text-purple-600',
   },
   {
     tag: [t.propertyName, t.function(t.propertyName)],
-    class: 'text-blue-600'
+    class: 'text-blue-600',
   },
   {
     tag: [t.lineComment],
-    class: 'text-gray-400 italic'
+    class: 'text-gray-400 italic',
   },
   {
     tag: [t.number],
-    class: 'text-orange-600'
+    class: 'text-orange-600',
   },
   {
     tag: [t.string],
-    class: 'text-emerald-600'
+    class: 'text-emerald-600',
   },
   {
     tag: [t.regexp, t.escape],
-    class: 'text-fuchsia-600'
+    class: 'text-fuchsia-600',
   },
   {
     tag: [
@@ -84,12 +84,12 @@ export const ThemeHighlight = HighlightStyle.define([
       t.bitwiseOperator,
       t.compareOperator,
       t.punctuation,
-      t.meta
+      t.meta,
     ],
-    class: 'text-pink-600'
+    class: 'text-pink-600',
   },
   {
     tag: [t.paren, t.squareBracket, t.brace, t.derefOperator, t.separator],
-    class: 'text-blue-gray-600'
-  }
+    class: 'text-blue-gray-600',
+  },
 ])

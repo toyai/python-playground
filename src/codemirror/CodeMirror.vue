@@ -7,8 +7,8 @@ import { onMounted, ref, watch } from 'vue'
 const props = defineProps({
   code: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 })
 
 const emit = defineEmits(['change'])
@@ -25,19 +25,19 @@ onMounted(() => {
           if (update.docChanged) {
             emit('change', update.state.doc.toString())
           }
-        })
-      ]
-    })
+        }),
+      ],
+    }),
   })
 
   watch(
     () => props.code,
     () => {
       view.dispatch({
-        changes: { from: 0, to: view.state.doc.length, insert: props.code }
+        changes: { from: 0, to: view.state.doc.length, insert: props.code },
       })
     },
-    { immediate: true }
+    { immediate: true },
   )
 })
 </script>

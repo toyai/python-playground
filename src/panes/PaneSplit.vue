@@ -41,49 +41,24 @@ function onBtnChange(btn) {
     @mouseleave="stopDragging"
   >
     <div
-      class="
-        relative
-        sm:(border-r
-        border-solid border-gray-300)
-        <sm:(transform
-        transition-transform
-        duration-250
-        translate-x-0
-        !w-full)
-      "
+      class="relative sm:(border-r border-solid border-gray-300) <sm:(transform transition-transform duration-250 translate-x-0 !w-full)"
       :class="{
         'pointer-events-none': isDragging,
-        '<sm:-translate-x-full': activeBtn === 'Result'
+        '<sm:-translate-x-full': activeBtn === 'Result',
       }"
       :style="{ width: getWidth() + '%' }"
     >
       <PaneLeft />
       <div
-        class="
-          cursor-ew-resize
-          top-0
-          -right-5px
-          bottom-0
-          w-10px
-          z-99
-          absolute
-          <sm:hidden
-        "
+        class="cursor-ew-resize top-0 -right-5px bottom-0 w-10px z-99 absolute <sm:hidden"
         @mousedown.prevent="startDragging"
       />
     </div>
     <div
-      class="
-        relative
-        <sm:(transform
-        transition-transform
-        duration-250
-        translate-x-0
-        !w-full)
-      "
+      class="relative <sm:(transform transition-transform duration-250 translate-x-0 !w-full)"
       :class="{
         'pointer-events-none': isDragging,
-        '<sm:-translate-x-full': activeBtn === 'Result'
+        '<sm:-translate-x-full': activeBtn === 'Result',
       }"
       :style="{ width: 100 - getWidth() + '%' }"
     >

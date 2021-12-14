@@ -21,12 +21,12 @@ test('PaneSwitch', async () => {
   assert.is(
     wrapper.emitted('btnChange').length,
     1,
-    'PaneSwitch should emit one value'
+    'PaneSwitch should emit one value',
   )
   assert.is(
     wrapper.emitted('btnChange')[0][0],
     'Code',
-    'PaneSwitch should emit Code'
+    'PaneSwitch should emit Code',
   )
 
   // click Result button
@@ -37,12 +37,12 @@ test('PaneSwitch', async () => {
   assert.is(
     wrapper.emitted('btnChange').length,
     2,
-    'PaneSwitch should have two values'
+    'PaneSwitch should have two values',
   )
   assert.is(
     wrapper.emitted('btnChange')[1][0],
     'Result',
-    'PaneSwitch should emit Result'
+    'PaneSwitch should emit Result',
   )
 })
 

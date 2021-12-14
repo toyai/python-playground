@@ -12,7 +12,7 @@ test('renders a commit', () => {
   assert.is(
     commit.text(),
     `v${version}@${__COMMIT__.slice(0, 7)}`,
-    'commit should match.'
+    'commit should match.',
   )
 })
 

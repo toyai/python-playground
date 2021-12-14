@@ -16,7 +16,7 @@ test('Header bar', () => {
   assert.is(
     playground.text(),
     'Python Playground',
-    'playground title should match.'
+    'playground title should match.',
   )
   assert.ok(pyVer.exists(), 'pyVer text should exist.')
   assert.ok(pyVer.isVisible(), 'pyVer text should be invisible.')

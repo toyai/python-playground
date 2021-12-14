@@ -2,7 +2,7 @@
 import {
   snippetCompletion,
   completeFromList,
-  ifNotIn
+  ifNotIn,
 } from '@codemirror/autocomplete'
 import { keywords, builtInFunctions, builtInClasses } from './python.json'
 
@@ -28,8 +28,8 @@ function makeCompletions(builtins, type, boost, info) {
         label: getLabel(k),
         type: type,
         info: info ? builtins[k] : '',
-        boost: boost
-      })
+        boost: boost,
+      }),
     )
   }
   return ifNotIn(['Comment', 'String'], completeFromList(completions))
@@ -39,22 +39,22 @@ export const completionKeywords = makeCompletions(
   keywords,
   'keyword',
   99,
-  false
+  false,
 )
 export const completionBuiltInFunctions = makeCompletions(
   builtInFunctions,
   'function',
   98,
-  true
+  true,
 )
 export const completionBuiltInClasses = makeCompletions(
   builtInClasses,
   'class',
   97,
-  true
+  true,
 )
 export default [
   completionKeywords,
   completionBuiltInFunctions,
-  completionBuiltInClasses
+  completionBuiltInClasses,
 ]

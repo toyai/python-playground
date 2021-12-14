@@ -13,19 +13,7 @@ function clickCodeResult(btn) {
 
 <template>
   <div
-    class="
-      bg-white
-      border-t
-      flex
-      h-50px
-      w-full
-      py-1
-      bottom-0
-      items-center
-      justify-evenly
-      fixed
-      sm:hidden
-    "
+    class="bg-white border-t flex h-50px w-full py-1 bottom-0 items-center justify-evenly fixed sm:hidden"
   >
     <template v-for="(btn, i) in ['Code', 'Result']" :key="i">
       <button

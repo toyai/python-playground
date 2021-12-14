@@ -15,7 +15,7 @@ test('PaneRight', () => {
   assert.is(
     result.text(),
     'Click ▶ Run to see the result:',
-    'result should match with the label.'
+    'result should match with the label.',
   )
   assert.ok(result.exists(), 'result should exist')
   assert.ok(result.isVisible(), 'result should be visible.')

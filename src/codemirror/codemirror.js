@@ -4,7 +4,7 @@ import {
   highlightSpecialChars,
   drawSelection,
   highlightActiveLine,
-  EditorView
+  EditorView,
 } from '@codemirror/view'
 import { EditorState, Transaction } from '@codemirror/state'
 import { history, historyKeymap } from '@codemirror/history'
@@ -31,8 +31,8 @@ const insertFourSpaces = ({ state, dispatch }) => {
   dispatch(
     state.update(state.replaceSelection(fourSpaces), {
       scrollIntoView: true,
-      annotations: Transaction.userEvent.of('input')
-    })
+      annotations: Transaction.userEvent.of('input'),
+    }),
   )
   return true
 }
@@ -60,7 +60,7 @@ export const extensions = [
   bracketMatching(),
   closeBrackets(),
   autocompletion({
-    override: pythonBuiltIns
+    override: pythonBuiltIns,
   }),
   highlightActiveLine(),
   highlightSelectionMatches(),
@@ -74,6 +74,6 @@ export const extensions = [
     ...foldKeymap,
     ...commentKeymap,
     ...completionKeymap,
-    tabBinding
-  ])
+    tabBinding,
+  ]),
 ]

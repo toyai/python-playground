@@ -1,5 +1,5 @@
 // @ts-check
-import puppeteer from 'puppeteer'
+import { chromium } from 'playwright-chromium'
 import { createServer } from 'vite'
 
 const PORT = 3001
@@ -9,13 +9,13 @@ async function main() {
     root: './src/__tests__/',
     configFile: './vite.config.js',
     server: {
-      port: PORT
-    }
+      port: PORT,
+    },
   })
 
   await server.listen()
 
-  const browser = await puppeteer.launch()
+  const browser = await chromium.launch()
   const page = await browser.newPage()
   const address = `http://localhost:${PORT}`
 

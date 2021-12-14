@@ -3,11 +3,11 @@ import { reactive, watchEffect } from 'vue'
 
 const urlHash = location.hash.slice(1)
 const matchedVcsURL = location.search.match(
-  /(?:github|gitlab)\.com\/(?:[\w\.\-]+\/){2,3}(?=blob).+/gi
+  /(?:github|gitlab)\.com\/(?:[\w\.\-]+\/){2,3}(?=blob).+/gi,
 )
 export const store = reactive({
   files: {},
-  result: ''
+  result: '',
 })
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa#unicode_strings
@@ -96,6 +96,6 @@ watchEffect(() =>
   history.replaceState(
     null,
     '',
-    '#' + btoa(toBinary(JSON.stringify(store.files)))
-  )
+    '#' + btoa(toBinary(JSON.stringify(store.files))),
+  ),
 )

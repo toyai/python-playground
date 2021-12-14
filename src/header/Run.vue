@@ -10,9 +10,9 @@ async function runCode() {
     const res = await fetch(`${__API_URL__}/api/playground/`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ source: store.files['main.py'] })
+      body: JSON.stringify({ source: store.files['main.py'] }),
     })
     store.result = await res.text()
   } catch (e) {
@@ -24,17 +24,7 @@ async function runCode() {
 
 <template>
   <button
-    class="
-      border
-      rounded
-      bg-gray-50
-      mr-0
-      py-1
-      px-2
-      text-teal-500
-      *header-btn
-      hover:bg-gray-100
-    "
+    class="border rounded bg-gray-50 mr-0 py-1 px-2 text-teal-500 *header-btn hover:bg-gray-100"
     title="Run the code"
     @click="runCode"
   >

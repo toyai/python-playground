@@ -24,7 +24,7 @@ const versionIncrements = [
   'prepatch',
   'preminor',
   'premajor',
-  'prerelease'
+  'prerelease',
 ]
 
 /**
@@ -53,7 +53,7 @@ async function main() {
     message: 'Select release type',
     choices: versionIncrements.map((i) => {
       return { title: `${i} (${inc(i)})`, value: inc(i) }
-    })
+    }),
   })
 
   if (!semver.valid(targetVersion)) {
@@ -68,7 +68,7 @@ async function main() {
   const { yes } = await prompts({
     type: 'confirm',
     name: 'yes',
-    message: `Releasing ${tag}. Confirm?`
+    message: `Releasing ${tag}. Confirm?`,
   })
 
   if (!yes) {
@@ -86,7 +86,7 @@ async function main() {
   const { yes: changelogOk } = await prompts({
     type: 'confirm',
     name: 'yes',
-    message: '\nChangelog generated. Does it look good?'
+    message: '\nChangelog generated. Does it look good?',
   })
 
   if (!changelogOk) {
