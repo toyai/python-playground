@@ -1,10 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@codemirror/autocomplete': ^0.19.12
-  '@codemirror/closebrackets': ^0.19.0
+  '@codemirror/autocomplete': ^0.19.13
+  '@codemirror/closebrackets': ^0.19.1
   '@codemirror/commands': ^0.19.8
-  '@codemirror/comment': ^0.19.0
+  '@codemirror/comment': ^0.19.1
   '@codemirror/fold': ^0.19.3
   '@codemirror/gutter': ^0.19.9
   '@codemirror/highlight': ^0.19.7
@@ -12,29 +12,29 @@ specifiers:
   '@codemirror/lang-python': ^0.19.4
   '@codemirror/language': ^0.19.7
   '@codemirror/matchbrackets': ^0.19.4
-  '@codemirror/search': ^0.19.7
-  '@codemirror/state': ^0.19.7
-  '@codemirror/view': ^0.19.42
-  '@vitejs/plugin-vue': ^2.2.0
+  '@codemirror/search': ^0.19.8
+  '@codemirror/state': ^0.19.9
+  '@codemirror/view': ^0.19.45
+  '@vitejs/plugin-vue': ^2.2.4
   '@vue/test-utils': ^2.0.0-rc.18
   conventional-changelog-cli: ^2.2.2
   husky: ^7.0.4
   lint-staged: ^12.3.4
-  playwright-chromium: ^1.19.0
+  playwright-chromium: ^1.19.2
   prettier: ^2.5.1
   prompts: ^2.4.2
   semver: ^7.3.5
   uvu: ^0.5.3
-  vite: ^2.8.2
-  vite-plugin-windicss: ^1.7.0
+  vite: ^2.8.6
+  vite-plugin-windicss: ^1.8.1
   vue: ^3.2.31
-  windicss: ^3.4.3
+  windicss: ^3.5.0
 
 devDependencies:
-  '@codemirror/autocomplete': 0.19.12
-  '@codemirror/closebrackets': 0.19.0
+  '@codemirror/autocomplete': 0.19.13
+  '@codemirror/closebrackets': 0.19.1
   '@codemirror/commands': 0.19.8
-  '@codemirror/comment': 0.19.0
+  '@codemirror/comment': 0.19.1
   '@codemirror/fold': 0.19.3
   '@codemirror/gutter': 0.19.9
   '@codemirror/highlight': 0.19.7
@@ -42,30 +42,28 @@ devDependencies:
   '@codemirror/lang-python': 0.19.4
   '@codemirror/language': 0.19.7
   '@codemirror/matchbrackets': 0.19.4
-  '@codemirror/search': 0.19.7
-  '@codemirror/state': 0.19.7
-  '@codemirror/view': 0.19.42
-  '@vitejs/plugin-vue': 2.2.0_vite@2.8.2+vue@3.2.31
+  '@codemirror/search': 0.19.8
+  '@codemirror/state': 0.19.9
+  '@codemirror/view': 0.19.45
+  '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
   '@vue/test-utils': 2.0.0-rc.18_vue@3.2.31
   conventional-changelog-cli: 2.2.2
   husky: 7.0.4
   lint-staged: 12.3.4
-  playwright-chromium: 1.19.0
+  playwright-chromium: 1.19.2
   prettier: 2.5.1
   prompts: 2.4.2
   semver: 7.3.5
   uvu: 0.5.3
-  vite: 2.8.2
-  vite-plugin-windicss: 1.7.0_vite@2.8.2
+  vite: 2.8.6
+  vite-plugin-windicss: 1.8.1_vite@2.8.6
   vue: 3.2.31
-  windicss: 3.4.3
+  windicss: 3.5.0
 
 packages:
 
-  /@antfu/utils/0.4.0:
-    resolution: {integrity: sha512-gqkpvjkgFUu+s3kP+Ly33OKpo5zvVY3FDFhv5BIb98SncS3KD6DNxPfNDjwHIoyXbz1leWo1j8DtRLZ1D2Jv+Q==}
-    dependencies:
-      '@types/throttle-debounce': 2.1.0
+  /@antfu/utils/0.5.0:
+    resolution: {integrity: sha512-MrAQ/MrPSxbh1bBrmwJjORfJymw4IqSHFBXqvxaga3ZdDM+/zokYF8DjyJpSjY2QmpmgQrajDUBJOWrYeARfzA==}
     dev: true
 
   /@babel/code-frame/7.16.0:
@@ -95,25 +93,25 @@ packages:
     hasBin: true
     dev: true
 
-  /@codemirror/autocomplete/0.19.12:
-    resolution: {integrity: sha512-zUQYo5gMdv7vhxlKoAY/vnNCGzlE9AU7+P649v3ovpQpoFdo3U1Nt01EJqFb4Sfaw6l1U/Elc9Iksd1lDy+MVw==}
+  /@codemirror/autocomplete/0.19.13:
+    resolution: {integrity: sha512-fI6lgTH2PlyTQqF2eWKDRBRUC+9MqvS2TfvE7aJ4Pu1oHM1w8JI16J9Qvwrd0iabJeF/QodU51Clok98c7fpCQ==}
     dependencies:
       '@codemirror/language': 0.19.7
-      '@codemirror/state': 0.19.7
-      '@codemirror/text': 0.19.5
+      '@codemirror/state': 0.19.9
+      '@codemirror/text': 0.19.6
       '@codemirror/tooltip': 0.19.13
-      '@codemirror/view': 0.19.42
+      '@codemirror/view': 0.19.45
       '@lezer/common': 0.15.8
     dev: true
 
-  /@codemirror/closebrackets/0.19.0:
-    resolution: {integrity: sha512-dFWX5OEVYWRNtGaifSbwIAlymnRRjxWMiMbffbAjF7p0zfGHDbdGkiT56q3Xud63h5/tQdSo5dK1iyNTzHz5vg==}
+  /@codemirror/closebrackets/0.19.1:
+    resolution: {integrity: sha512-ZiLXT6u+VuBK5QnfBbt/Vmfd9Pg6449wn1DIOWFZHUOldg5eFn3VGGjYY2XWuHQz5WuK+7dXamV2KE885O1gyA==}
     dependencies:
       '@codemirror/language': 0.19.7
-      '@codemirror/rangeset': 0.19.2
-      '@codemirror/state': 0.19.7
-      '@codemirror/text': 0.19.5
-      '@codemirror/view': 0.19.42
+      '@codemirror/rangeset': 0.19.5
+      '@codemirror/state': 0.19.9
+      '@codemirror/text': 0.19.6
+      '@codemirror/view': 0.19.45
     dev: true
 
   /@codemirror/commands/0.19.8:
@@ -121,18 +119,18 @@ packages:
     dependencies:
       '@codemirror/language': 0.19.7
       '@codemirror/matchbrackets': 0.19.4
-      '@codemirror/state': 0.19.7
+      '@codemirror/state': 0.19.9
       '@codemirror/text': 0.19.6
-      '@codemirror/view': 0.19.42
+      '@codemirror/view': 0.19.45
       '@lezer/common': 0.15.8
     dev: true
 
-  /@codemirror/comment/0.19.0:
-    resolution: {integrity: sha512-3hqAd0548fxqOBm4khFMcXVIivX8p0bSlbAuZJ6PNoUn/0wXhxkxowPp0FmFzU2+y37Z+ZQF5cRB5EREWPRIiQ==}
+  /@codemirror/comment/0.19.1:
+    resolution: {integrity: sha512-uGKteBuVWAC6fW+Yt8u27DOnXMT/xV4Ekk2Z5mRsiADCZDqYvryrJd6PLL5+8t64BVyocwQwNfz1UswYS2CtFQ==}
     dependencies:
-      '@codemirror/state': 0.19.7
-      '@codemirror/text': 0.19.5
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/text': 0.19.6
+      '@codemirror/view': 0.19.45
     dev: true
 
   /@codemirror/fold/0.19.3:
@@ -141,16 +139,16 @@ packages:
       '@codemirror/gutter': 0.19.9
       '@codemirror/language': 0.19.7
       '@codemirror/rangeset': 0.19.5
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
     dev: true
 
   /@codemirror/gutter/0.19.9:
     resolution: {integrity: sha512-PFrtmilahin1g6uL27aG5tM/rqR9DZzZYZsIrCXA5Uc2OFTFqx4owuhoU9hqfYxHp5ovfvBwQ+txFzqS4vog6Q==}
     dependencies:
       '@codemirror/rangeset': 0.19.2
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
     dev: true
 
   /@codemirror/highlight/0.19.7:
@@ -158,8 +156,8 @@ packages:
     dependencies:
       '@codemirror/language': 0.19.7
       '@codemirror/rangeset': 0.19.5
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
       '@lezer/common': 0.15.8
       style-mod: 4.0.0
     dev: true
@@ -167,8 +165,8 @@ packages:
   /@codemirror/history/0.19.2:
     resolution: {integrity: sha512-unhP4t3N2smzmHoo/Yio6ueWi+il8gm9VKrvi6wlcdGH5fOfVDNkmjHQ495SiR+EdOG35+3iNebSPYww0vN7ow==}
     dependencies:
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
     dev: true
 
   /@codemirror/lang-python/0.19.4:
@@ -182,9 +180,9 @@ packages:
   /@codemirror/language/0.19.7:
     resolution: {integrity: sha512-pNNUtYWMIMG0lUSKyUXJr8U0rFiCKsKFXbA2Oj17PC+S1FY99hV0z1vcntW67ekAIZw9DMEUQnLsKBuIbAUX7Q==}
     dependencies:
-      '@codemirror/state': 0.19.7
+      '@codemirror/state': 0.19.9
       '@codemirror/text': 0.19.5
-      '@codemirror/view': 0.19.42
+      '@codemirror/view': 0.19.45
       '@lezer/common': 0.15.8
       '@lezer/lr': 0.15.4
     dev: true
@@ -193,43 +191,43 @@ packages:
     resolution: {integrity: sha512-VFkaOKPNudAA5sGP1zikRHCEKU0hjYmkKpr04pybUpQvfTvNJXlReCyP0rvH/1iEwAGPL990ZTT+QrLdu4MeEA==}
     dependencies:
       '@codemirror/language': 0.19.7
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
       '@lezer/common': 0.15.8
     dev: true
 
   /@codemirror/panel/0.19.0:
     resolution: {integrity: sha512-LJuu49xnuhaAztlhnLJQ57ddOirSyf8/lnl7twsQUG/05RkxodBZ9F7q8r5AOLqOkaQOy9WySEKX1Ur8lD9Q5w==}
     dependencies:
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
     dev: true
 
   /@codemirror/rangeset/0.19.2:
     resolution: {integrity: sha512-5d+X8LtmeZtfFtKrSx57bIHRUpKv2HD0b74clp4fGA7qJLLfYehF6FGkJJxJb8lKsqAga1gdjjWr0jiypmIxoQ==}
     dependencies:
-      '@codemirror/state': 0.19.7
+      '@codemirror/state': 0.19.9
     dev: true
 
   /@codemirror/rangeset/0.19.5:
     resolution: {integrity: sha512-L3b+RIwIRKOJ3pJLOtpkxCUjGnxZKFyPb0CjYWKnVLuzEIaEExWWK7sp6rsejxOy8RjYzfCHlFhYB4UdQN7brw==}
     dependencies:
-      '@codemirror/state': 0.19.7
+      '@codemirror/state': 0.19.9
     dev: true
 
-  /@codemirror/search/0.19.7:
-    resolution: {integrity: sha512-/dhHi/HUHtHfmw7ULcTtsLAUTRauPZctGkqZ+yCA58QvzP2RVWsvq0BqBrlvFgZq2SwSbWwF3NO2MuxIGsQ4Sw==}
+  /@codemirror/search/0.19.8:
+    resolution: {integrity: sha512-mMHx60bzbcbSI8Fu2WbxsGAZ2FCGkzslISsvyJXOxVoB7E+y1LDTBv0HUJ+srmfIsak6ceMxKgyI6RldRPMu5A==}
     dependencies:
       '@codemirror/panel': 0.19.0
       '@codemirror/rangeset': 0.19.5
-      '@codemirror/state': 0.19.7
+      '@codemirror/state': 0.19.9
       '@codemirror/text': 0.19.6
-      '@codemirror/view': 0.19.42
+      '@codemirror/view': 0.19.45
       crelt: 1.0.5
     dev: true
 
-  /@codemirror/state/0.19.7:
-    resolution: {integrity: sha512-UB7OqJSiUZXmwbsBu7wRoMBrXwOHwSs1J9RORB2oz0oA5LfPVbLYIKl5223qCcSSKoM5cSc3bWpMUaHo8WOVnA==}
+  /@codemirror/state/0.19.9:
+    resolution: {integrity: sha512-psOzDolKTZkx4CgUqhBQ8T8gBc0xN5z4gzed109aF6x7D7umpDRoimacI/O6d9UGuyl4eYuDCZmDFr2Rq7aGOw==}
     dependencies:
       '@codemirror/text': 0.19.6
     dev: true
@@ -245,15 +243,15 @@ packages:
   /@codemirror/tooltip/0.19.13:
     resolution: {integrity: sha512-7vgvjQjwFQ9hPejw2s+w3UR1XAYjQ5M0F9HRwutXkZHP1tBFV7LnNJ3xBD7F9SR9kAh8WgdL3BpUsEwX1aqoQg==}
     dependencies:
-      '@codemirror/state': 0.19.7
-      '@codemirror/view': 0.19.42
+      '@codemirror/state': 0.19.9
+      '@codemirror/view': 0.19.45
     dev: true
 
-  /@codemirror/view/0.19.42:
-    resolution: {integrity: sha512-sGpuHYesqNThkAdJHTf4BO0hBeYnAHwamnCGkM6a2G/W5svRJGsFb5Vk/LQPQurDKK9V5fBTRqXH8nKGrIszng==}
+  /@codemirror/view/0.19.45:
+    resolution: {integrity: sha512-wR19UBYvJMeV9axa5Xo6ATbAP1jl30BPFZ5buu3cJjYXwlRhJDjzw2wUbxk1zsR1LtAe5jrRNeWEtGA+IPacxw==}
     dependencies:
       '@codemirror/rangeset': 0.19.5
-      '@codemirror/state': 0.19.7
+      '@codemirror/state': 0.19.9
       '@codemirror/text': 0.19.6
       style-mod: 4.0.0
       w3c-keyname: 2.2.4
@@ -314,10 +312,6 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/throttle-debounce/2.1.0:
-    resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
-    dev: true
-
   /@types/yauzl/2.9.2:
     resolution: {integrity: sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==}
     requiresBuild: true
@@ -326,14 +320,14 @@ packages:
     dev: true
     optional: true
 
-  /@vitejs/plugin-vue/2.2.0_vite@2.8.2+vue@3.2.31:
-    resolution: {integrity: sha512-wXigM1EwN2G7rZcwG6kLk9ivvIMhx2363tCEvMBiXcTu5nePM/12hUPVzPb83Uugt6U+zom1gTpJopi/Ow/jwg==}
+  /@vitejs/plugin-vue/2.2.4_vite@2.8.6+vue@3.2.31:
+    resolution: {integrity: sha512-ev9AOlp0ljCaDkFZF3JwC/pD2N4Hh+r5srl5JHM6BKg5+99jiiK0rE/XaRs3pVm1wzyKkjUy/StBSoXX5fFzcw==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.8.2
+      vite: 2.8.6
       vue: 3.2.31
     dev: true
 
@@ -428,26 +422,26 @@ packages:
       vue: 3.2.31
     dev: true
 
-  /@windicss/config/1.7.0:
-    resolution: {integrity: sha512-jP+SYEUMTcvEQexYAeaIGKWq3sE+yv0myyOCph7Glm/YZE2ZCK1GukI1oDG6fcVer121EQzCY4Rx11trb3oSZg==}
+  /@windicss/config/1.8.1:
+    resolution: {integrity: sha512-WwrUMa8dT1AXbUjzQUVVCEpCNQg6rvr6wTyLXX8tv5jf9zYyTmj10sl0f7i5tbsMeG66hd2TpDp2JCcQf9knTA==}
     dependencies:
       debug: 4.3.3
-      jiti: 1.12.9
-      windicss: 3.4.3
+      jiti: 1.13.0
+      windicss: 3.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@windicss/plugin-utils/1.7.0:
-    resolution: {integrity: sha512-4zxTIhpGaia4FTxL/c20GQU2bK3bqToerdErvDzwLqWQECVGt7vTGFQd3e4XMpfR6Ujgk4/p7fCHv/F15R/pkA==}
+  /@windicss/plugin-utils/1.8.1:
+    resolution: {integrity: sha512-bYJDw5cPBhUR8qlyL1g634xtGPF4ABOmtRfDrkL8nf9YAJkNowHao9lAMAJqHLd56Zp6BEoqib3smuwKSJKBnQ==}
     dependencies:
-      '@antfu/utils': 0.4.0
-      '@windicss/config': 1.7.0
+      '@antfu/utils': 0.5.0
+      '@windicss/config': 1.8.1
       debug: 4.3.3
       fast-glob: 3.2.11
       magic-string: 0.25.7
       micromatch: 4.0.4
-      windicss: 3.4.3
+      windicss: 3.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1461,8 +1455,8 @@ packages:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: true
 
-  /jiti/1.12.9:
-    resolution: {integrity: sha512-TdcJywkQtcwLxogc4rSMAi479G2eDPzfW0fLySks7TPhgZZ4s/tM6stnzayIh3gS/db3zExWJyUx4cNWrwAmoQ==}
+  /jiti/1.13.0:
+    resolution: {integrity: sha512-/n9mNxZj/HDSrincJ6RP+L+yXbpnB8FybySBa+IjIaoH9FIxBbrbRT5XUbe8R7zuVM2AQqNMNDDqz0bzx3znOQ==}
     hasBin: true
     dev: true
 
@@ -1884,21 +1878,21 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /playwright-chromium/1.19.0:
-    resolution: {integrity: sha512-KmqJRTRFJqwvIny0XNjQV/PTjUszvjO2E9Rpe/WOljOgnFH3TKRSf0ShFcP8YrPirVF2GOXYtyw+Ip0z2Y+7Xg==}
+  /playwright-chromium/1.19.2:
+    resolution: {integrity: sha512-4S6KiJgR6PCQmlm4IzArgt9aDkzijYXxVG1j3vRqdugXQ1mPA2QIFUmXmRJeDczVkbIR5N8opJSNMnNDFg4qVw==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      playwright-core: 1.19.0
+      playwright-core: 1.19.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
     dev: true
 
-  /playwright-core/1.19.0:
-    resolution: {integrity: sha512-mlT/2pHUQbcZumVIKD4iwIKtO2k/BFHYmOAwOepdEvHLgqJrmsCgHvDgpehM6wDh5chksh2sJZIp8dZQ6158Yw==}
+  /playwright-core/1.19.2:
+    resolution: {integrity: sha512-OsL3sJZIo1UxKNWSP7zW7sk3FyUGG06YRHxHeBw51eIOxTCQRx5t+hXd0cvXashN2CHnd3hIZTs2aKa/im4hZQ==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
@@ -2474,22 +2468,22 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-windicss/1.7.0_vite@2.8.2:
-    resolution: {integrity: sha512-1ps7hk6Pr9TqsW9Y+QXmJ9PMowVLjM0h32c+jh9vdQr5Jzyim3hHivR0rXSkDV9znIB9RkjRQD1znRbAMX0OcQ==}
+  /vite-plugin-windicss/1.8.1_vite@2.8.6:
+    resolution: {integrity: sha512-c+900Dkc94kRuZPb6mz79B5XOS2PHNhadf7P9UjIRoimEE5HB7hj1f+A6qGHO4VejwU/MIvA6D5+Sz2lDKAaEQ==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 1.7.0
+      '@windicss/plugin-utils': 1.8.1
       debug: 4.3.3
       kolorist: 1.5.1
-      vite: 2.8.2
-      windicss: 3.4.3
+      vite: 2.8.6
+      windicss: 3.5.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/2.8.2:
-    resolution: {integrity: sha512-zawfykcPVPYva4KusIWORNLr324Qx86/3NpfQSIOJdjnL5pYhwDoImLYMOh4lFLcP/7//tNuWM2vx2F5OSVC9w==}
+  /vite/2.8.6:
+    resolution: {integrity: sha512-e4H0QpludOVKkmOsRyqQ7LTcMUDF3mcgyNU4lmi0B5JUbe0ZxeBBl8VoZ8Y6Rfn9eFKYtdXNPcYK97ZwH+K2ug==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -2534,8 +2528,8 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /windicss/3.4.3:
-    resolution: {integrity: sha512-UnugThsvEgy8RsPm4/B5DYMCAqvZzD6yWU7Anh+f07t5RSJ8zvmAylGLbXrHPJEmCKzo2Mf+fOUvISH7IJqM3A==}
+  /windicss/3.5.0:
+    resolution: {integrity: sha512-+UNYm2Zy4TM2uLiz6bqY2a69LavMqGbILFIwuGhPEJ/uqsPT3kCGSaWlhMw/weIaFOkm1K1cEzZ015Y8pp8N1A==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true
