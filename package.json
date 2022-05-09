@@ -39,7 +39,7 @@
     "@vitejs/plugin-vue": "^2.3.2",
     "@vue/test-utils": "^2.0.0-rc.21",
     "conventional-changelog-cli": "^2.2.2",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "lint-staged": "^12.4.1",
     "playwright-chromium": "^1.21.1",
     "prettier": "^2.6.2",
