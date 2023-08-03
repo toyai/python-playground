@@ -46,7 +46,7 @@
     "prompts": "^2.4.2",
     "semver": "^7.3.7",
     "uvu": "^0.5.3",
-    "vite": "^2.9.9",
+    "vite": "^2.9.16",
     "vite-plugin-windicss": "^1.8.4",
     "vue": "^3.2.36",
     "windicss": "^3.5.4"
